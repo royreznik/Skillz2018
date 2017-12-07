@@ -9,7 +9,7 @@
 /**
  * <pre>
  * Bot for the SkillZ2018 Competition.
- * The Bot created by StakeOverFlow.
+ * The Bot was created by StakeOverFlow.
  * </pre>
  */
 //-----------------------------------------------------------
@@ -42,7 +42,7 @@ class Engine
 
     /**
      * @return The Closest Capsule from the Pirate
-     * Currently dont work cause there is only one capsule
+     * Currently don't work because there is only one capsule.
      */
     public static Capsule getClosestCapsule()
     {
@@ -52,7 +52,7 @@ class Engine
 
     /**
      * @return The Closest My MotherShip from the Pirate
-     * Currently dont work cause there is only one MotherShip
+     * Currently don't work because there is only one Mothership.
      */
     public static Mothership getClosestMyMotherShip()
     {
@@ -63,8 +63,8 @@ class Engine
     /**
      *
      * @param obj
-     * @return Which Diraction the pirate should push the obj.
-     * Currently its Stuped af, and work poorly
+     * @return Which direction the pirate should push the obj to.
+     * Currently its Stupid af, and works poorly
      */
     public static Location pushAwayFromShip(MapObject obj)
     {
@@ -98,7 +98,7 @@ class BotPirate
         this.didPush = false;
     }
 
-    //Getter Setter
+    //Getters & Setters
     public Pirate getPirate() {
         return pirate;
     }
@@ -124,13 +124,13 @@ class BotPirate
         this.didPush = didPush;
     }
 
-    //Stuped Method that push anytime any Enemy.
+    //Stupid method that pushes anytime any enemy.
     public void tryPush() {
         // Go over all enemies.
         for (Pirate enemy: game.getEnemyLivingPirates()) {
             // Check if the pirate can push the enemy.
             if (pirate.canPush(enemy)) {
-                // Push enemy!
+                // Push the enemy!
                 pirate.push(enemy, enemy.initialLocation);
 
                 // Print a message.
@@ -186,8 +186,8 @@ class BotPirate
                 this.didPush = true;
             }
         }
-        //Case Enemy dont have any Capsuls on them
-        //Follow the colesest enemy to the capsuls
+        //Case Enemy don't have any Capsules on him
+        //Follow the closest enemy to the capsulse
         if(destenation == null)
         {
             this.destenation = game.getEnemyMothership();
@@ -271,7 +271,7 @@ class PirateHandler
      * 
      * @return if any of the pirate have capsule
      */
-    public boolean cpsuleOwn()
+    public boolean capsuleOwn()
     {
         for(BotPirate p : pirates)
         {
@@ -282,7 +282,7 @@ class PirateHandler
 
 
     //Tactic Maker
-    //Represent as Jobs like: Capsuler - Camper and ect'
+    //Represent as Jobs like: Capsuler - Camper and etc'
     // 4 - 4 means that there is 4 Capulsers and 4 Campers
     public void doWork()
     {
