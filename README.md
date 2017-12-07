@@ -1,22 +1,23 @@
-# Before Upload the Code
+# Before Uploading the Code
 + Remove all the comments. (/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*+/|[ \t]*//.*)
-+ Renive all the Debug messages.
++ Renive(remove??) all the Debug messages.
 + Use Obfuscate Program
-+ Convert into UniCodes
++ Convert into Unicode
 
 # Release History
 * 1.0.0
     * First Bot Created with basic tatic.
 * 1.1.0
     * ADD: Camper Job, Push ability
-
+* 1.1.3 
+    * ADD: elay is a dick note
 # Things to Fix / TODO by Priority
  + Camper Job  - FIXED
  + IMPORTENT! Check for Campers - THE MOST IMPORTANT SHIT IN THIS GAME
  + Priority to double push
  + Push away from city can push the Pirate into the Capsule
  + Saver - pirate that follow the capsule holder and save him from other pirates
- + Check if we should push our pirate to give him a boost
+ + Check if we should push our pirate to give him a boost (we should)
  + Implemets A* or dijkStar
 
 # License
