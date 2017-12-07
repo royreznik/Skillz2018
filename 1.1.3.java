@@ -1,9 +1,3 @@
-package bots;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import pirates.*;
 //-----------------------------------------------------------
 /**
  * @author      RoyRenzik
@@ -19,41 +13,12 @@ import pirates.*;
  * </pre>
  */
 //-----------------------------------------------------------
-/**
- * Comments:
- * Elay you r a DICK
- * Add here things you think we should add to the bot
- */
 
-
-//-----------------------------------------------------------
-/**Things to FIX/TODO by Priority:
- *Camper Job  - FIXED
- *IMPORTENT! Check for Campers - THE MOST IMPORTANT SHIT IN THIS GAME
- *Priority to double push
- *Push away from city can push the Pirate into the Capsule
- *Saver - pirate that follow the capsule holder and save him from other pirates
- *Check if we should push our pirate to give him a boost
- *Implemets A* or dijkStar
- */
-//-----------------------------------------------------------
-
-/**
- * Vers:
- * 1.0 - https://pastebin.com/mLPUEEVj
- * 1.1 - https://pastebin.com/V0emrNnw
- * 1.2 - to be Continue
- */
-//-----------------------------------------------------------
-//Before Commit the Code:
-// - Remove all the comments. (/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*+/|[ \t]*//.*)
-// - Remove all Debug messages.
-// - Using Obfuscate Program to change varibles name
-// - convert into UniCodes
-
+//Added this time: new Tactic, Saver Job
 public class MyBot implements PirateBot {
 
 
+    //Static Variable for the game
     public static PirateGame gameInstance;
 
     @Override
@@ -65,6 +30,8 @@ public class MyBot implements PirateBot {
 
     }
 }
+
+//Class for all the calculation in the game.
 class Engine
 {
     //INIT the game Varibale
@@ -72,18 +39,33 @@ class Engine
     static {
         game = MyBot.gameInstance;
     }
+
+    /**
+     * @return The Closest Capsule from the Pirate
+     * Currently dont work cause there is only one capsule
+     */
     public static Capsule getClosestCapsule()
     {
         List<Capsule> capsules = Arrays.asList(game.getMyCapsule());
         return capsules.get(0);
     }
-    //In case there is more then 1
-    public static Mothership getClosestMotherShip()
+
+    /**
+     * @return The Closest My MotherShip from the Pirate
+     * Currently dont work cause there is only one MotherShip
+     */
+    public static Mothership getClosestMyMotherShip()
     {
         List<Mothership> motherships = Arrays.asList(game.getMyMothership());
         return motherships.get(0);
     }
 
+    /**
+     *
+     * @param obj
+     * @return Which Diraction the pirate should push the obj.
+     * Currently its Stuped af, and work poorly
+     */
     public static Location pushAwayFromShip(MapObject obj)
     {
         Mothership enemyShip = game.getEnemyMothership();
@@ -116,8 +98,6 @@ class BotPirate
         this.didPush = false;
     }
 
-
-
     //Getter Setter
     public Pirate getPirate() {
         return pirate;
@@ -144,7 +124,7 @@ class BotPirate
         this.didPush = didPush;
     }
 
-
+    //Stuped Method that push anytime any Enemy.
     public void tryPush() {
         // Go over all enemies.
         for (Pirate enemy: game.getEnemyLivingPirates()) {
@@ -185,7 +165,7 @@ class BotPirate
     }
 
 
-    //Camper Way of Thinking
+    //Camper Strategy
     public void camperLogic()
     {
         for(Pirate p : game.getAllEnemyPirates())
@@ -214,7 +194,7 @@ class BotPirate
         }
     }
 
-    //Capsuler Way of Thinking
+    //Capsuler Strategy
     public void capsulerLogic()
     {
         tryPush();
@@ -229,7 +209,7 @@ class BotPirate
         }
         else
         {
-            destenation = Engine.getClosestMotherShip();
+            destenation = Engine.getClosestMyMotherShip();
         }
     }
 
@@ -257,6 +237,7 @@ class BotPirate
     }
 }
 
+//Class that represent the Strategy
 class PirateHandler
 {
     private static final PirateGame game;
@@ -276,11 +257,20 @@ class PirateHandler
         tatic = Tactics.BASICV2;
     }
 
+    /**
+     * 
+     * @param obj
+     * Sorting the Pirate Array by distance from object
+     */
     public void sortingByDistance(MapObject obj)
     {
         Collections.sort(pirates, (p1,p2) -> p1.pirate.distance(obj) - p2.pirate.distance(obj));
     }
 
+    /**
+     * 
+     * @return if any of the pirate have capsule
+     */
     public boolean cpsuleOwn()
     {
         for(BotPirate p : pirates)
@@ -291,12 +281,14 @@ class PirateHandler
     }
 
 
-
+    //Tactic Maker
+    //Represent as Jobs like: Capsuler - Camper and ect'
+    // 4 - 4 means that there is 4 Capulsers and 4 Campers
     public void doWork()
     {
         switch (tatic)
         {
-
+            //3 - 5
             case BASICV2:
                 sortingByDistance(Engine.getClosestCapsule());
                 int j = 0;
@@ -318,7 +310,7 @@ class PirateHandler
                     ++j;
                 }
                 break;
-
+            //4-4
             case BASIC:
                 int i = 0;
                 int more = pirates.size() / 2;
@@ -342,6 +334,7 @@ class PirateHandler
                     i++;
                 }
                 break;
+            //8-0
             default:
                 for(BotPirate p : pirates)
                 {
