@@ -11,13 +11,13 @@
     * ADD: Camper Job, Push ability
 
 # Things to Fix / TODO by Priority
- +Camper Job  - FIXED
- +IMPORTENT! Check for Campers - THE MOST IMPORTANT SHIT IN THIS GAME
- +Priority to double push
- +Push away from city can push the Pirate into the Capsule
- +Saver - pirate that follow the capsule holder and save him from other pirates
- +Check if we should push our pirate to give him a boost
- +Implemets A* or dijkStar
+ + Camper Job  - FIXED
+ + IMPORTENT! Check for Campers - THE MOST IMPORTANT SHIT IN THIS GAME
+ + Priority to double push
+ + Push away from city can push the Pirate into the Capsule
+ + Saver - pirate that follow the capsule holder and save him from other pirates
+ + Check if we should push our pirate to give him a boost
+ + Implemets A* or dijkStar
 
 # License
 MIT License
