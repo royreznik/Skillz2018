@@ -8,9 +8,9 @@
 * 1.0.0
     * First Bot Created with basic tatic.
 * 1.1.0
-    * ADD: Camper Job, Push ability
+    * ADDED: Camper Job, Push ability
 * 1.1.3 
-    * ADD: elay is a dick note
+    * ADDED: elay is a dick note
 # Things to Fix / TODO by Priority
  + Camper Job  - FIXED
  + IMPORTENT! Check for Campers - THE MOST IMPORTANT SHIT IN THIS GAME
