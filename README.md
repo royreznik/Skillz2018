@@ -13,8 +13,10 @@
     * ADDED: elay is a dick note
 # Things to Fix / TODO by Priority
  + ~~Camper Job~~  - FIXED
- + IMPORTENT! Check for Campers - THE MOST IMPORTANT SHIT IN THIS GAME > I'm working on it partially.
- + Anti-Camper Tactic/Job! (IF THERE ARE CAMPERS). > I'm working on it.
+ + IMPORTENT! Check for Campers - THE MOST IMPORTANT SHIT IN THIS GAME 
+ > I'm working on it partially.
+ + Anti-Camper Tactic/Job! (IF THERE ARE CAMPERS). 
+ > I'm working on it.
  + Priority to double push
  + Push away from city can push the Pirate into the Capsule
  + Check for closest Wall > This might be useful for me. do it if you have the time.
