@@ -6,7 +6,7 @@
 
 # Release History
 * 1.0.0
-    * First Bot Created with basic tatic.
+    * First Bot Created with basic tactic.
 * 1.1.0
     * ADDED: Camper Job, Push ability
 * 1.1.3 
