@@ -14,6 +14,7 @@
 # Things to Fix / TODO by Priority
  + Camper Job  - FIXED
  + IMPORTENT! Check for Campers - THE MOST IMPORTANT SHIT IN THIS GAME
+ + Push pirate (with capsule) to mothership from a distance of 300(?) - IF THERE ARE CAMPERS.
  + Priority to double push
  + Push away from city can push the Pirate into the Capsule
  + Saver - pirate that follow the capsule holder and save him from other pirates
