@@ -12,12 +12,12 @@
 * 1.1.3 
     * ADDED: elay is a dick note
 # Things to Fix / TODO by Priority
- + Camper Job  - FIXED
- + IMPORTENT! Check for Campers - THE MOST IMPORTANT SHIT IN THIS GAME
- + Push pirate (with capsule) to mothership from a distance of 300(?) - IF THERE ARE CAMPERS.
+ + ~~Camper Job~~  - FIXED
+ + IMPORTENT! Check for Campers - THE MOST IMPORTANT SHIT IN THIS GAME > I'm working on it partially.
+ + Anti-Camper Tactic/Job! (IF THERE ARE CAMPERS). > I'm working on it.
  + Priority to double push
  + Push away from city can push the Pirate into the Capsule
- + Check for closest Wall
+ + Check for closest Wall > This might be useful for me. do it if you have the time.
  + Saver - pirate that follow the capsule holder and save him from other pirates
  + Check if we should push our pirate to give him a boost (we should)
  + Add Engine methods for Initiolize
