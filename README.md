@@ -1,6 +1,6 @@
 # Before Uploading the Code
 + Remove all the comments. (/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*+/|[ \t]*//.*)
-+ Renive(remove??) all the Debug messages.
++ Remove all the Debug messages.
 + Use Obfuscate Program
 + Convert into Unicode
 
