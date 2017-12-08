@@ -15,12 +15,12 @@
 	* ADDED: AntiCamper Job, nearest wall method, minor fixes, forget to add roy u r a dick note :-1:
 
 # Things to Fix / TODO by Priority
- + ~~Camper Job~~  - FIXED
+ + ~~Camper Job~~  - **FIXED**
  + IMPORTENT! Check for Campers - THE MOST IMPORTANT SHIT IN THIS GAME. 
  + Anti-Camper Tactic/Job! (IF THERE ARE CAMPERS). **Partially Done**
  + Priority to double push
  + Push away from city can push the Pirate into the Capsule
- + ~~Check for the closest Wall.~~ - DONE
+ + ~~Check for the closest Wall.~~ - **DONE**
  + Saver - pirate that follow the capsule holder and save him from other pirates
  + Check if we should push our pirate to give him a boost (we should)
  + Add Engine methods for Initiolize
