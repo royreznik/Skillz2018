@@ -17,7 +17,7 @@
 # Things to Fix / TODO by Priority
  + ~~Camper Job~~  - FIXED
  + IMPORTENT! Check for Campers - THE MOST IMPORTANT SHIT IN THIS GAME. 
- + Anti-Camper Tactic/Job! (IF THERE ARE CAMPERS). **Works partially**
+ + Anti-Camper Tactic/Job! (IF THERE ARE CAMPERS). **Partially Done**
  + Priority to double push
  + Push away from city can push the Pirate into the Capsule
  + ~~Check for the closest Wall.~~ - DONE
