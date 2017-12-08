@@ -17,7 +17,7 @@
  + Anti-Camper Tactic/Job! (IF THERE ARE CAMPERS). **I'm working on it.**
  + Priority to double push
  + Push away from city can push the Pirate into the Capsule
- + Check for the closest Wall. **This might be useful for me. do it if you have the time.**
+ + ~~Check for the closest Wall.~~ - DONE, uploading soon
  + Saver - pirate that follow the capsule holder and save him from other pirates
  + Check if we should push our pirate to give him a boost (we should)
  + Add Engine methods for Initiolize
