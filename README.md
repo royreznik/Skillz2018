@@ -11,13 +11,16 @@
     * ADDED: Camper Job, Push ability
 * 1.1.3 
     * ADDED: elay is a dick note
+* 1.2
+	* ADDED: AntiCamper Job, nearest wall method, minor fixes, forget to add roy u r a dick note :-1:
+
 # Things to Fix / TODO by Priority
  + ~~Camper Job~~  - FIXED
- + IMPORTENT! Check for Campers - THE MOST IMPORTANT SHIT IN THIS GAME. **I'm working on it partially.**
- + Anti-Camper Tactic/Job! (IF THERE ARE CAMPERS). **I'm working on it.**
+ + IMPORTENT! Check for Campers - THE MOST IMPORTANT SHIT IN THIS GAME. 
+ + Anti-Camper Tactic/Job! (IF THERE ARE CAMPERS). **Works partially**
  + Priority to double push
  + Push away from city can push the Pirate into the Capsule
- + ~~Check for the closest Wall.~~ - DONE, uploading soon
+ + ~~Check for the closest Wall.~~ - DONE
  + Saver - pirate that follow the capsule holder and save him from other pirates
  + Check if we should push our pirate to give him a boost (we should)
  + Add Engine methods for Initiolize
