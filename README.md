@@ -13,12 +13,17 @@
     * ADDED: elay is a dick note
 * 1.2
 	* ADDED: AntiCamper Job, nearest wall method, minor fixes, forget to add roy u r a dick note :-1:
+* 1.2.1
+	*ADDED: New Push Method,New Basic Tactic that involve 1 Capsuler 2 AntiCampers and 5 Campers
+	*FIXED: AntiCamper distance less then 300
+	*IMPORTANT: Fix tryPush
 
 # Things to Fix / TODO by Priority
  + ~~Camper Job~~  - **FIXED**
  + IMPORTENT! Check for Campers - THE MOST IMPORTANT SHIT IN THIS GAME. 
  + Anti-Camper Tactic/Job! (IF THERE ARE CAMPERS). **Partially Done**
  + Priority to double push
+ + Change the tryPush methods to be much better(Allways push to the nearestWall) (Need to implement NearestWalltoObject)
  + Push away from city can push the Pirate into the Capsule
  + ~~Check for the closest Wall.~~ - **DONE**
  + Saver - pirate that follow the capsule holder and save him from other pirates
