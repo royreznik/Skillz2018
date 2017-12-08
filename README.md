@@ -17,9 +17,11 @@
  + Push pirate (with capsule) to mothership from a distance of 300(?) - IF THERE ARE CAMPERS.
  + Priority to double push
  + Push away from city can push the Pirate into the Capsule
+ + Check for closest Wall
  + Saver - pirate that follow the capsule holder and save him from other pirates
  + Check if we should push our pirate to give him a boost (we should)
- + Implemets A* or dijkStar
+ + Add Engine methods for Initiolize
+ + Implemets A* or dijkStar - can be copied from AlonM
 
 # License
 MIT License
