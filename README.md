@@ -12,7 +12,7 @@
 * 1.1.3 
     * ADDED: elay is a dick note
 * 1.2
-	* ADDED: AntiCamper Job, nearest wall method, minor fixes, forget to add roy u r a dick note :-1:
+	* ADDED: AntiCamper Job, nearest wall method, minor fixes, forgot to add roy u r a dick note :-1:
 * 1.2.1
 	* ADDED: New Push Method,New Basic Tactic that involve 1 Capsuler 2 AntiCampers and 5 Campers
 	* FIXED: AntiCamper distance less then 300
