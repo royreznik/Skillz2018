@@ -34,7 +34,7 @@
  + Check if we should push our pirate to give him a boost (we should) **Implemented in the new Anti-Camper**
  + Add Engine methods for Initiolize
  + Implemets A* or dijkStar - can be copied from AlonM
-
+ 
 # License
 MIT License
 
