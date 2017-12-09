@@ -1,8 +1,10 @@
 # Before Uploading the Code
 + Remove all the comments. (/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*+/|[ \t]*//.*)
 + Remove all the Debug messages.
-+ Use Obfuscate Program
-+ Convert into Unicode
++ Use Obfuscate Program.
++ Convert into Unicode:
+++ Use https://www.branah.com/unicode-converter
+++ Use https://www.textfixer.com/tools/remove-line-breaks.php
 
 # Release History
 * 1.0.0
