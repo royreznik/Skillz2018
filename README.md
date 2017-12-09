@@ -26,6 +26,9 @@
 	* ADDED: nearestWall(MapObject obj) in class Engine, getMyCapsuler() 
 	* CHANGED: AntiCamper Strategy has been changed. NEEDS TO BE REVIEWED
 	* NOTE: nearestWall(MapObject obj) might need to be static, currently its not!
+* 1.2.3
+	* ADDED: BASICV4 Tactic - 1 Capsuler 1 AntiCamper 6 Campers
+	* CHANGED: CamperLogic has been revamped! , AntiCamper && Capsuler efficiency has been improved.
 
 # Things to Fix / TODO by Priority
  + ~~Camper Job~~  - **FIXED**
