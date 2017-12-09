@@ -17,17 +17,21 @@
 	* ADDED: New Push Method,New Basic Tactic that involve 1 Capsuler 2 AntiCampers and 5 Campers
 	* FIXED: AntiCamper distance less then 300
 	* IMPORTANT: Fix tryPush
+* 1.2.2
+	* ADDED: nearestWall(MapObject obj) in class Engine, getMyCapsuler() 
+	* CHANGED: AntiCamper Strategy has been changed. NEEDS TO BE REVIEWED
+	* NOTE: nearestWall(MapObject obj) might need to be static, currently its not!
 
 # Things to Fix / TODO by Priority
  + ~~Camper Job~~  - **FIXED**
  + IMPORTENT! Check for Campers - THE MOST IMPORTANT SHIT IN THIS GAME. 
  + Anti-Camper Tactic/Job! (IF THERE ARE CAMPERS). **Partially Done**
  + Priority to double push
- + Change the tryPush methods to be much better(Allways push to the nearestWall) (Need to implement NearestWalltoObject)
+ + Change the tryPush methods to be much better(Always push to the nearestWall) (Need to implement NearestWalltoObject)
  + Push away from city can push the Pirate into the Capsule
  + ~~Check for the closest Wall.~~ - **DONE**
  + Saver - pirate that follow the capsule holder and save him from other pirates
- + Check if we should push our pirate to give him a boost (we should)
+ + Check if we should push our pirate to give him a boost (we should) **Implemented in the new Anti-Camper**
  + Add Engine methods for Initiolize
  + Implemets A* or dijkStar - can be copied from AlonM
 
