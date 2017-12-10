@@ -308,7 +308,7 @@ class BotPirate {
         Mothership myMothership = game.getMyMothership();
         boolean campersOnRadius = false;
         int camperDist = 1500;
-        tryPush();
+        //tryPush();
         for (Pirate enemy : game.getAllEnemyPirates())
             if (enemy.distance(myMothership) <= camperDist) {// enemys on/close to my mothership radius.
                 camperDist = enemy.distance(myMothership);
