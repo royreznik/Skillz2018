@@ -29,20 +29,23 @@
 * 1.2.3
 	* ADDED: BASICV4 Tactic - 1 Capsuler 1 AntiCamper 6 Campers
 	* CHANGED: CamperLogic has been revamped! , AntiCamper && Capsuler efficiency has been improved.
+* 1.3.0
+	* ADDED: Defender Job, New Varibales Checking while play, A* Algorithim
+	* CHANGE: Handler become static to make caclulation easier, getEnemyCapsuler return the closest to Capsuerifthere is no Capsuler
 
 # Things to Fix / TODO by Priority
  + ~~Camper Job~~  - **REVAMPED!**
  + MUST IMRPOVE ANTI CAMPER
  + IMPORTENT! Check for Campers - THE MOST IMPORTANT SHIT IN THIS GAME. 
  + Anti-Camper Tactic/Job! (IF THERE ARE CAMPERS). **Partially Done**
- + Priority to double push
+ + Priority to double push **Need to be checked**
  + Change the tryPush methods to be much better(Always push to the nearestWall) (Need to implement NearestWalltoObject)
  + Push away from city can push the Pirate into the Capsule
  + ~~Check for the closest Wall.~~ - **DONE**
  + Saver - pirate that follow the capsule holder and save him from other pirates
  + Check if we should push our pirate to give him a boost (we should) **Implemented in the new Anti-Camper**
  + Add Engine methods for Initiolize
- + Implemets A* or dijkStar - can be copied from AlonM
+ + Implemets A* or dijkStar - can be copied from AlonM **Need to impove**
  
 # License
 MIT License
