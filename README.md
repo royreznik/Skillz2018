@@ -32,6 +32,7 @@
 
 # Things to Fix / TODO by Priority
  + ~~Camper Job~~  - **REVAMPED!**
+ + MUST IMRPOVE ANTI CAMPER
  + IMPORTENT! Check for Campers - THE MOST IMPORTANT SHIT IN THIS GAME. 
  + Anti-Camper Tactic/Job! (IF THERE ARE CAMPERS). **Partially Done**
  + Priority to double push
