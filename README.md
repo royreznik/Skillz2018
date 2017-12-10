@@ -31,7 +31,7 @@
 	* CHANGED: CamperLogic has been revamped! , AntiCamper && Capsuler efficiency has been improved.
 
 # Things to Fix / TODO by Priority
- + ~~Camper Job~~  - **FIXED**
+ + ~~Camper Job~~  - **REVAMPED!**
  + IMPORTENT! Check for Campers - THE MOST IMPORTANT SHIT IN THIS GAME. 
  + Anti-Camper Tactic/Job! (IF THERE ARE CAMPERS). **Partially Done**
  + Priority to double push
