@@ -379,7 +379,7 @@ class BotPirate {
                 this.tryPushPirate((Pirate) destination, nearestWall);
         }
         //Case Enemy don't have any Capsules on him
-        //Follow the closest enemy to the capsule
+        //goes to mother ship
         if (destination == null) {
             this.destination = game.getEnemyMothership();
         }
@@ -401,7 +401,7 @@ class BotPirate {
         }
         else
         if (!campersOnRadius || camperDist > pirate.distance(myMothership) || this.pirate.distance(myHelper()) > 300) {
-            game.debug("IM GOING TO UNLOAD");
+            game.debug("Capsuler going to mothership radius");
             destination = myMothership.getLocation().towards(this.pirate.getLocation(), 300);
             return;
         }
@@ -419,7 +419,7 @@ class BotPirate {
     }
 
     //Anti-Camper Strategy
-    //TODO: fix logic to work on different type of campers. (campers standing farther then 300 from motherbase..)
+    //TODO: fix logic to work on different type of campers. (campers standing farther then 300 from mothership..)
     //Added: new Push methods
     public void antiCamperLogic() {
         Mothership myMothership = game.getMyMothership();
@@ -432,7 +432,7 @@ class BotPirate {
                 camperDist = enemy.distance(myMothership);
                 camper=enemy;
                 campersOnRadius = true;
-                game.debug("ANTI DETECT Campers close to radius"+" closest = "+camperDist);
+                game.debug("AntiCamper detected Campers, "+" closest camper distance = "+camperDist);
             }
         }
         if (!campersOnRadius && !pirate.canPush(capsuler)) {
@@ -453,7 +453,7 @@ class BotPirate {
                 if (pirate.canPush(capsuler) && capsuler.distance(myMothership) <= 900) {
                     // only if the push will result in a point
                     game.debug("PUSHING CAPSULER");
-                    this.tryPushPirate(capsuler, myMothership); // pushes capsuler to the motherbase
+                    this.tryPushPirate(capsuler, myMothership); // pushes capsuler to the mothership
                 } else
                     destination = myMothership.getLocation().towards(this.pirate.getLocation(), 300);
             }
@@ -658,7 +658,7 @@ class PirateHandler
     }
 
     /**
-     * Note: Can't be used in BotPirate class (roy, where is it being used?)
+     *
      * @return if any of my pirates has the capsule
      */
     public boolean capsuleOwn()
