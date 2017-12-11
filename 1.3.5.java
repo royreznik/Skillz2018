@@ -3,7 +3,7 @@ package bots;
 /**
  * @author      RoyRenzik
  * @author      ElayM
- * @version     1.2.3
+ * @version     1.3.5 (1.2.7 with improved anticamper)
  *
  **/
 //-----------------------------------------------------------
@@ -20,9 +20,7 @@ import java.util.*;
  */
 //-----------------------------------------------------------
 
-//Added: BASICV4 Tactic - 1 Capsuler 1 AntiCamper 6 Campers
-//Changed: CamperLogic has been revamped! ,AntiCamper && Capsuler efficiency has been improved.
-//MUST CHECK IF THE ANTICAMPER WORKS FINE FOR BOTH WAYS (it would)
+//Changed: ANTICAMPER FINALLY WORKS, removed capsuler trypush.
 public class MyBot implements PirateBot {
 
 
@@ -309,7 +307,6 @@ class BotPirate {
     public void capsulerLogic() {
         Mothership myMothership = game.getMyMothership();
         boolean campersOnRadius = false;
-        tryPush();
         for (Pirate enemy : game.getAllEnemyPirates())
             if (enemy.distance(myMothership) <= 500) {// enemys on/close to my mothership radius.
                 campersOnRadius = true;
@@ -356,15 +353,23 @@ class BotPirate {
             // if there are campers, go to position
             destination =myMothership.getLocation().towards(game.getMyCapsule().initialLocation, 801);
             game.debug("IM GOING to 801 from myMothership");
+            return;
         }
         //capsuler = getMyCapsuler();
         if (capsuler.hasCapsule()) { // if anticamper is in position to push.. // if the pirate has a capsule
             game.debug("CAPSULER HAS CAPSULE");
+            for (Pirate enemy : game.getAllEnemyPirates()) {
+                if (enemy.distance(capsuler) <= 300) {// enemys on/close to my mothership radius.
+                    game.debug("pushing creeper");
+                    this.tryPushPirate(capsuler, myMothership); // pushes capsuler to the motherbase
+                    return;
+                }
+            }
             if (campersOnRadius) { //if there are campers
                 game.debug("CAMPERS DETECTED");
                 game.debug("CAPSULER IN POSITION?");
                 if (capsuler.distance(myMothership) <= 900) {
-                     // only if the push will result in a point
+                    // only if the push will result in a point
                     this.tryPushPirate(capsuler, myMothership); // pushes capsuler to the motherbase
                     game.debug("IM TRYING TO THE PUSH CAPSULER");
                 }
