@@ -37,7 +37,7 @@ class Engine
     static {
         game = MyBot.gameInstance;
     }
-
+ 
      
     public static Capsule getClosestCapsule()
     {
