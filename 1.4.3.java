@@ -418,7 +418,7 @@ class BotPirate {
             game.debug("CAPSULER HAS CAPSULE");
             for (Pirate enemy : game.getAllEnemyPirates()) {
                 if (enemy.distance(capsuler) <= 300
-                        && capsuler.distance(bots.Engine.nearestWall(myMothership)) >= 600) {
+                        && capsuler.distance(bots.Engine.nearestWall(myMothership)) > 600) {
                     game.debug("pushing capsuler away from creeper");
                     this.tryPushPirate(capsuler, myMothership); // pushes capsuler to the mothership
                     return;
