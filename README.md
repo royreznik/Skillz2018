@@ -1,5 +1,5 @@
 # Before Uploading the Code
-+ Remove all the comments.  (?sm)(^(?:\s*)?((?:/\*(?:\*)?).*?(?<=\*/))|(?://).*?(?<=$))
++ Remove all the comments.  (/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*+/|[ \t]*//.*)
 + Remove all the Debug messages.
 + Use Obfuscate Program.
 + Convert into Unicode
