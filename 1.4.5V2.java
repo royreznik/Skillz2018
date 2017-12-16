@@ -3,7 +3,7 @@ package bots;
 /**
  * @author      RoyRenzik
  * @author      ElayM
- * @version     1.4.5
+ * @version     1.4.6
  *
  **/
 //-----------------------------------------------------------
@@ -20,7 +20,7 @@ import java.util.logging.Handler;
  * </pre>
  */
 //-----------------------------------------------------------
-// FIXED VALHALA,CAMPERS (ADDED ELSE), --count is disabled.
+// 1.4.5 with FUTHEST CAMPER!
 public class MyBot implements PirateBot {
 
 
@@ -212,7 +212,23 @@ class BotPirate {
             }
         }
     }
+    //Stupid method that pushes anytime any enemy.
+    public void tryPushWall() {
+        // Go over all enemies.
+        for (Pirate enemy : game.getEnemyLivingPirates()) {
+            // Check if the pirate can push the enemy.
+            if (pirate.canPush(enemy)) {
+                // Push the enemy!
+                pirate.push(enemy, Engine.nearestWall(enemy));
 
+                // Print a message.
+                System.out.println("pirate " + pirate + " pushes " + enemy + " towards nearest wall");
+
+                // Did push.
+                didPush = true;
+            }
+        }
+    }
     /**
      * @param p - AnyPirate
      * @param obj - AnyMapObject
@@ -351,10 +367,10 @@ class BotPirate {
     public void capsulerLogic() {
         Mothership myMothership = game.getMyMothership();
         boolean campersOnRadius = false;
-        int camperDist = 2000;
+        int camperDist = 0;
         Pirate camper = game.getAllEnemyPirates()[0];
         for (Pirate enemy : game.getAllEnemyPirates()) {
-            if (enemy.distance(myMothership) < camperDist) {// enemys on/close to my mothership radius.
+            if (enemy.distance(myMothership) < 2000 && enemy.distance(myMothership) > camperDist) {// enemys on/close to my mothership radius.
                 camperDist = enemy.distance(myMothership);
                 camper = enemy;
                 campersOnRadius = true;
@@ -397,15 +413,15 @@ class BotPirate {
     public void antiCamperLogic() {
         Mothership myMothership = game.getMyMothership();
         boolean campersOnRadius = false;
-        int camperDist = 2000;
+        int camperDist = 0;
         Pirate capsuler = getMyCapsuler();
         Pirate camper = game.getAllEnemyPirates()[0];
         for (Pirate enemy : game.getAllEnemyPirates()) {
-            if (enemy.distance(myMothership) < camperDist) {// enemys on/close to my mothership radius.
+            if (enemy.distance(myMothership) < 2000 && enemy.distance(myMothership) >= camperDist) {// enemys on/close to my mothership radius.
                 camperDist = enemy.distance(myMothership);
                 camper = enemy;
                 campersOnRadius = true;
-                game.debug("AntiCamper detected Campers, " + " closest camper distance = " + camperDist);
+                game.debug("AntiCamper detected Campers," + " furthest camper distance = " + camperDist);
             }
         }
         if (!campersOnRadius && !pirate.canPush(capsuler)) {
@@ -423,6 +439,7 @@ class BotPirate {
             game.debug("anti going to position");
             return;
         }
+
         game.debug("anti reached position");
         capsuler = getMyCapsuler(); // this might cause the problem
         if (capsuler.hasCapsule()) { // if anticamper is in position to push.. // if the pirate has a capsule
@@ -446,11 +463,10 @@ class BotPirate {
                     this.tryPushPirate(capsuler, game.getMyMothership()); // pushes capsuler to the mothership
                     return;
                 }
-                if (this.pirate.distance(capsuler) <= 50 && capsuler.distance(myMothership) > 900) { // make sure its not 49.
+                if (this.pirate.distance(capsuler) <=50 && capsuler.distance(myMothership) > 900) { // make sure its not 49.
                     game.debug("TO VALHALLA");
+                    tryPushWall();
                     destination = myMothership.getLocation().towards(this.pirate.getLocation(), 300);
-                    //}
-
                 }
                 // if the pirate has capsule and there are no campers -
                 //this.tryPushPirate(capsuler, myMothership); // pushes capsuler to the motherbase
