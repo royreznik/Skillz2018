@@ -1,0 +1,23 @@
+def checkFactorial(num):
+  sume = 0
+  number = 0
+  for dig in map(int,str(num)):
+    sume += factorial(int(dig))
+  if(sume == num):
+    return sume
+  return None
+  
+def factorial(num):
+  sume = 1
+  while num > 0:
+    sume *= num
+    num -= 1
+  return sume
+  
+summerise = 0
+for n in range(10,2540161):
+  check = checkFactorial(n)
+  if(check is not None):
+    summerise += check
+  
+print(summerise)
