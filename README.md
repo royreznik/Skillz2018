@@ -50,7 +50,7 @@
 # License
 MIT License
 
-Copyright (c) 2017 roy reznik
+Copyright (c) 2018 Elay Marzouk &  Roy Reznik
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
