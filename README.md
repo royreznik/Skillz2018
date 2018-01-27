@@ -4,7 +4,7 @@
 + Use Obfuscate Program.
 + Convert into Unicode
 
-# UniCode convertion steps:
+# Unicode conversion steps:
 + https://www.branah.com/unicode-converter
 + https://www.textfixer.com/tools/remove-line-breaks.php
  
