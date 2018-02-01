@@ -362,7 +362,7 @@ class BotPirate {
         }
         if(game.getLivingAsteroids().length > 0)
         {
-            tryPushAstroid(game.getLivingAsteroids()[0], game.getEnemyCapsules()[0]);
+            tryPushAstroid(game.getLivingAsteroids()[0], game.getMyMotherships()[0]);
             if(didPush)
             {
                 return;
