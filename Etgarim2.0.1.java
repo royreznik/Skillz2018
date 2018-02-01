@@ -3,7 +3,7 @@ package bots;
 /**
  * @author RoyRenzik
  * @author ElayM
- * @version Etgarim 2.0 (Based on 1.4.5)
+ * @version Etgarim 2.0.1 (Based on 1.4.5)
  **/
 //-----------------------------------------------------------
 
