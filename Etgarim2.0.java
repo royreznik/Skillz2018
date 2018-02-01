@@ -392,7 +392,7 @@ class BotPirate {
         for (Pirate p : game.getMyLivingPirates()) {
             if (p.hasCapsule()) return p;
         }
-        Pirate closest = game.getMyLivingPirates()[0];
+        Pirate closest = this.pirate;
         for (int i = 0; i < game.getMyCapsules().length; i++) {
 
             for (Pirate p : game.getMyLivingPirates()) {
