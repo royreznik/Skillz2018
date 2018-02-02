@@ -176,7 +176,7 @@ public class Engine {
         List<Pirate> myPirates = Arrays.asList(game.getMyLivingPirates());
         Collections.sort(myPirates, (p1, p2) -> p1.distance(p) - p2.distance(p));
         // return myPirates.get(0); this returns the same pirate?
-        if (myPirates.size() > 2) {
+        if (myPirates.size() >= 2) {
             return myPirates.get(1);
         }
         return myPirates.get(0);
