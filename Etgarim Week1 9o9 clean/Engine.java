@@ -89,14 +89,14 @@ public class Engine {
     /**
      * @return Enemy Capsuler SHOULD NOT BE USED!
      */
-    public static Pirate getEnemyCapsuler() {
-        for (Pirate p : game.getEnemyLivingPirates()) {
-            if (p.hasCapsule()) {
-                return p;
-            }
-        }
-        return null;
-    }
+//    public static Pirate getEnemyCapsuler() {
+//        for (Pirate p : game.getEnemyLivingPirates()) {
+//            if (p.hasCapsule()) {
+//                return p;
+//            }
+//        }
+//        return null;
+//    }
 
     /**
      * @param p given pirate
@@ -176,7 +176,7 @@ public class Engine {
         List<Pirate> myPirates = Arrays.asList(game.getMyLivingPirates());
         Collections.sort(myPirates, (p1, p2) -> p1.distance(p) - p2.distance(p));
         // return myPirates.get(0); this returns the same pirate?
-        if (myPirates.size() > 2) {
+        if (myPirates.size() >= 2) {
             return myPirates.get(1);
         }
         return myPirates.get(0);
