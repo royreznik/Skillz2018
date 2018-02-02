@@ -142,7 +142,7 @@ public class BotPirate {
             return;
         }
         if (game.getLivingAsteroids().length > 0) {
-            if(Engine.isThereCampers())
+            if(Engine.areThereCampers())
             {
                 tryPushAstroid(game.getLivingAsteroids()[0], game.getMyMotherships()[0]);
             }
@@ -330,7 +330,7 @@ public class BotPirate {
             // Engine.pushAwayFromShip(destination));
             //
             // }else
-            Asteroid a = Engine.getCloestAsteroid(destination);
+            Asteroid a = Engine.getClosestAsteroid(destination);
             if(a != null)
             {
                 if(a.distance(destination) < 601)

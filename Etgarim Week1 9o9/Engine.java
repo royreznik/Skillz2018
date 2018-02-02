@@ -23,7 +23,8 @@ public class Engine {
     }
 
     /**
-     * @return The Closest Capsule from the Pirate
+     * @param p
+     * @return The closest capsule to the given pirate
      */
     public static Capsule getClosestMyCapsule(Pirate p) {
         List<Capsule> capsules = Arrays.asList(game.getMyCapsules());
@@ -35,21 +36,27 @@ public class Engine {
         List<Capsule> capsules = Arrays.asList(game.getMyCapsules());
         game.debug(capsules.get(0));
         Collections.sort(capsules, (m1, m2) -> m1.distance(p) - m2.distance(p));
-        for(Capsule c : capsules)
-        {
-            if(c.holder == null)
-            {
+        for (Capsule c : capsules) {
+            if (c.holder == null) {
                 return c;
             }
         }
         return capsules.get(0);
     }
 
-
+    /**
+     * @param p
+     * @return The closest capsule to the given pirate
+     */
+    public static Capsule getClosestEnemyCapsule(Pirate p) {
+        List<Capsule> capsules = Arrays.asList(game.getEnemyCapsules());
+        Collections.sort(capsules, (m1, m2) -> m1.distance(p) - m2.distance(p));
+        return capsules.get(0);
+    }
 
     /**
      * @param p
-     * @return The Closest My Mothership from the given pirate
+     * @return The closest my mothership to the given pirate
      */
     public static Mothership getClosestMyMothership(Pirate p) {
         List<Mothership> motherships = Arrays.asList(game.getMyMotherships());
@@ -59,7 +66,7 @@ public class Engine {
 
     /**
      * @param p
-     * @return The Closest Enemy Mothership from the given pirate
+     * @return The closest enemy mothership to the given pirate
      */
     public static Mothership getClosestEnemyMothership(Pirate p) {
         List<Mothership> motherships = Arrays.asList(game.getEnemyMotherships());
@@ -67,10 +74,10 @@ public class Engine {
         return motherships.get(0);
     }
 
+
     /**
      * @param p
-     * @return The Closest Mothership (either your's or enemy's) from the given
-     *         pirate
+     * @return The closest mothership (either your's or enemy's) to the given pirate
      */
     public static Mothership getClosestAnyMothership(Pirate p) {
         List<Mothership> motherships = Arrays.asList(game.getEnemyMotherships());
@@ -92,10 +99,9 @@ public class Engine {
     }
 
     /**
-     * @param p
-     *            closest enemy capsuler to this pirate
-     * @return the closest enemy capsuler to the given pirate! if enemy don't have
-     *         any capsulers, returns the closest enemy to an enemy's mothership!
+     * @param p given pirate
+     * @return the closest enemy capsuler to the given pirate! if enemy doesn't have
+     * any capsulers, returns the closest enemy to an enemy's capsule (initial location)!
      */
     public static Pirate getClosestEnemyCapsuler(Pirate p) {
 
@@ -117,6 +123,8 @@ public class Engine {
         enemys = Arrays.asList(game.getEnemyLivingPirates());
         Collections.sort(enemys,
                 (e1, e2) -> e1.distance(getClosestEnemyMothership(e1)) - e2.distance(getClosestEnemyMothership(e2)));
+//        Collections.sort(myPirates,
+//                (e1, e2) -> e1.distance(getClosestEnemyCapsule(e1)) - e2.distance(getClosestEnemyCapsule(e2)));
 
         try {
             // for some reason game.getEnemyLivingPirates(0) crashes the bot -
@@ -125,19 +133,17 @@ public class Engine {
         } catch (ArrayIndexOutOfBoundsException e) {
             game.debug(e.getStackTrace());
         }
-        if(game.getEnemyLivingPirates().length > 0)
-        {
+        if (game.getEnemyLivingPirates().length > 0) {
             return game.getEnemyLivingPirates()[0];
         }
         return game.getAllEnemyPirates()[0];
-        
+
     }
 
     /**
-     * @param p
-     *            closest my capsuler to this pirate
+     * @param p closest my capsuler to this pirate
      * @return the closest my capsuler to the given pirate! if we don't have any
-     *         capsulers, returns the closest friend to a myMothership!
+     * capsulers, returns the closest friend to a my mothership.!
      */
     public static Pirate getClosestMyCapsuler(Pirate p) {
 
@@ -160,6 +166,8 @@ public class Engine {
         myPirates = Arrays.asList(game.getMyLivingPirates());
         Collections.sort(myPirates,
                 (e1, e2) -> e1.distance(getClosestMyMothership(e1)) - e2.distance(getClosestMyMothership(e2)));
+//        Collections.sort(myPirates,
+//                (e1, e2) -> e1.distance(getClosestMyCapsule(e1)) - e2.distance(getClosestMyCapsule(e2)));
 
         return myPirates.get(0);
     }
@@ -180,13 +188,11 @@ public class Engine {
         Collections.sort(myPirates, (p1, p2) -> p1.distance(p) - p2.distance(p));
         return myPirates.get(0);
     }
-    
-    public static Asteroid getCloestAsteroid(MapObject p)
-    {
+
+    public static Asteroid getClosestAsteroid(MapObject p) {
         List<Asteroid> ads = Arrays.asList(game.getAllAsteroids());
-        if(ads.size()> 0)
-        {
-            Collections.sort(ads,(a1,a2) -> a1.distance(p) - a2.distance(p));
+        if (ads.size() > 0) {
+            Collections.sort(ads, (a1, a2) -> a1.distance(p) - a2.distance(p));
             return ads.get(0);
         }
         return null;
@@ -195,7 +201,7 @@ public class Engine {
     /**
      * @param obj
      * @return Which direction the pirate should push the obj to. Currently its
-     *         Stupid af, and works poorly
+     * Stupid af, and works poorly
      */
     public static Location pushAwayFromShip(MapObject obj) {
         Mothership enemyShip = game.getEnemyMotherships()[0];
@@ -204,19 +210,15 @@ public class Engine {
         x = enemyShip.location.row < obj.getLocation().row ? 9000 : -9000;
         return new Location(x, y);
     }
-    
-    public static boolean isAsteroidMoving(Asteroid a)
-    {
+
+    public static boolean isAsteroidMoving(Asteroid a) {
         return a.direction.col != 0 || a.direction.row != 0;
     }
-    
-    public static boolean isThereCampers()
-    {
+
+    public static boolean areThereCampers() {
         int counter = 0;
-        for(Pirate p : game.getEnemyLivingPirates())
-        {
-            if(p.distance(game.getMyMotherships()[0]) < 2500)
-            {
+        for (Pirate p : game.getEnemyLivingPirates()) {
+            if (p.distance(game.getMyMotherships()[0]) < 2500) {
                 counter++;
             }
         }
@@ -225,8 +227,8 @@ public class Engine {
 
     /**
      * @return the location of the nearest wall/border to the pirate. Example - If
-     *         the method runs on a Pirate at (100,4600) the method will return
-     *         (0,4600) - a straight line towards the nearest wall.
+     * the method runs on a Pirate at (100,4600) the method will return
+     * (0,4600) - a straight line towards the nearest wall.
      */
     public static Location nearestWall(MapObject obj) {
         int row = obj.getLocation().row;
