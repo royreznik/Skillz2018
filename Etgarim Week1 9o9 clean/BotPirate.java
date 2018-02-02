@@ -490,9 +490,9 @@ public class BotPirate {
     }
 
     public void OneManArmyLogic() {
-        if (Engine.getClosestEnemyCapsuler(this.pirate) != null
-                && Engine.getClosestEnemyCapsuler(this.pirate).distance(game.getEnemyMotherships()[0]) < 5400) {
-            tryPushPirate(Engine.getClosestEnemyCapsuler(this.pirate), new Location(3300, 1600));
+        if (Engine.getEnemyCapsuler() != null
+                && Engine.getEnemyCapsuler().distance(game.getEnemyMotherships()[0]) < 5400) {
+            tryPushPirate(Engine.getEnemyCapsuler(), new Location(3300, 1600));
         }
     }
 
