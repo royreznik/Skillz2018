@@ -28,7 +28,6 @@ public class PirateNavigator {
     
     
     public static void navigate(BotPirate bp){
-        System.out.println("started");
         Location currentPath = bp.pirate.location.towards(bp.destination, 200);
         Asteroid[] hitters = Engine.willAsteroidHit(currentPath);
         hitters = Arrays.asList(hitters).stream().filter(a -> !alreadyPushed.contains(a)).toArray(Asteroid[]::new);
@@ -44,7 +43,6 @@ public class PirateNavigator {
             return;
         }
         else {
-            System.out.println("kk");
             Set<Predicate<Location>> canHit = getHittersPredicate(hitters); 
             Predicate<Location> canMove = (l -> !canHit.stream().anyMatch(p -> p.test(l))); //checks if any asteroid are going to hit location
             ToIntBiFunction<Location, Location> locationValue = (l1, l2) -> 0; //default function is that all location have the same preference
