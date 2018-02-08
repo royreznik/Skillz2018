@@ -1,0 +1,259 @@
+body {
+    background: url('bg.jpg') no-repeat center top fixed !important;
+    background-size: 100% !important;
+    color: #012443 !important;
+}
+
+.span3, .span9 {
+    box-shadow: 0 0 25px 2px rgba(164, 214, 250, 0.75);
+    border: none;
+    background-color: rgba(255,255,255,0.85);
+    border-radius: 22px !important;
+    font-size: 14px;
+    border-radius: 6px;
+    margin: 0 0 0 0;
+    box-sizing: border-box;
+    display: block;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    box-sizing: border-box;
+}
+
+.span9 {
+    margin-left: 0px;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+svg {
+    margin-top: 3%;
+}
+
+a {
+    color: rgb(38, 89, 173);
+    font-weight: 600;
+}
+
+p {
+    color: #012443 !important;
+}
+
+#logo {
+    max-width: 40%;
+}
+
+#logo-container {
+    text-align: center;
+}
+
+pre {
+    background-color: rgba(255, 255, 255, 0.62);
+}
+
+.well {
+    background-color: #ffffff70;
+}
+
+table.params {
+    border-left: 5px solid rgba(0,0,0,0.1);
+}
+
+table.params th {
+    background: #fcfcfc70;
+}
+
+table.params th code {
+    background: inherit;
+}
+
+.header {
+    cursor: pointer;
+}
+
+::-webkit-scrollbar { 
+    width: 0.8em;
+    height: 0.8em;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #dbdbdb;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #c3c7cc;
+    outline: 1px solid slategrey;
+    border-radius: 8px;
+}
+
+#sidebar {
+    position: fixed;
+    overflow: hidden;
+    max-height: 95%;
+    height: 95%;
+    border-radius: 6px;
+}
+
+.navbar-inner {
+    background: none;
+    border: none;
+    box-shadow: none;
+    margin-top: 10px;
+}
+
+.navbar-inner .brand {
+    width: 100%;
+}
+
+.sidebar-nav, .sidebar-search {
+    background: none;
+    box-shadow: none;
+    border: none;
+    margin-bottom: 0px;
+    word-wrap: break-word;
+}
+
+.sidebar-nav {
+    height: 75%;
+}
+.sidebar-nav #nav, #search-results-list {
+    height: 100%;
+    overflow: auto;
+    direction: rtl;
+}
+
+.sidebar-nav .nav-list {
+    direction: ltr;
+}
+
+.sidebar-nav .searching {
+    display: none;
+}
+
+#search-results-list {
+    text-align: left;
+}
+
+#dox-content {
+    overflow-y: auto;
+    overflow-x: hidden;
+    float: right !important;
+}
+
+.class-fields {
+    background-color: whitesmoke;
+    display: none;
+}
+
+li.identifier a {
+    font-weight: bold;
+    color:#002b36;
+}
+
+li.identifier {
+    margin-left: 15px;
+}
+
+.read-more-state {
+    display: none;
+  }
+  
+.read-more-target {
+  display: none;
+}
+
+#inheritance-tree {
+  overflow-x: auto;
+}
+
+.read-more-state:checked ~ .read-more-target {
+  display: block;
+}
+
+.read-more-state ~ .read-more-trigger:before {
+  content: 'Show more';
+}
+
+.read-more-state:checked ~ .read-more-trigger:before {
+  content: 'Show less';
+}
+
+.read-more-state.graph ~ .read-more-trigger:before {
+    content: 'Show Hierarchy';
+}
+  
+.read-more-state.graph:checked ~ .read-more-trigger:before {
+    content: 'Hide Hierarchy';
+}
+  
+.read-more-trigger {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 .5em;
+  color: #666;
+  font-size: .9em;
+  line-height: 2;
+  border: 1px solid #ddd;
+  border-radius: .25em;
+  background-color: white;
+}
+
+code, .codehilite {
+  direction: ltr; /*Code blocks will be written in ltr*/
+  text-align: left;
+}
+
+.info-file-content {
+    width: 100%;
+    height: 100%;
+    text-align: justify;
+}
+
+.info-file-content li {
+    margin-right: 20px;
+}
+
+.info-file-content h1, h2 {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.info-file-content img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.info-file-content .webkit-submit {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: 1px solid;
+    border-radius: .5em;    
+    font-size: 1.5em;
+    color: rgb(0, 162, 255);
+    text-align: center;
+}
+
+.rtl-tree-component {
+    text-align: right;
+    direction: rtl;
+}
+
+.site-footer .container {
+    width: 100%;
+}
+
+.marker {
+    display: inline;
+    margin-left: 7px;
+    margin-right: 7px;
+    border: solid 2px #012443;
+    color: #012443;
+    border-radius: 25px;
+    font-family: "Arial Black";
+    font-size: 11px;
+    opacity: 0.75;
+}
+
+.changed-marker {
+    padding-right: 4px;
+    padding-bottom: 1px;
+}

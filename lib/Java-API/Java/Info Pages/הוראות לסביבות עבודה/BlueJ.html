@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en"><!-- use theme color or fallback -->
+<!--use textcolor from settings, otherwise create a contrasting color to theme color-->
+<head><meta charset="utf-8"/><link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-select.min.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,600italic,400" rel="stylesheet" type="text/css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet" type="text/css"/><script src="../../jquery-1.9.1.min.js"></script><script src="../../bootstrap/js/bootstrap.min.js"></script><script src="../../bootstrap/js/bootstrap-select.min.js"></script><link href="../../styles.css" rel="stylesheet"/><link href="../../extra-styles.css" rel="stylesheet"/><link href="../../haxe-nav.css" rel="stylesheet"/><link href="../../codehilite.css" rel="stylesheet"/><script type="text/javascript">var dox = {rootPath: "../../",platforms: ["documentation"]};</script><script type="text/javascript" src="../../new.js"></script><script type="text/javascript" src="../../nav.js"></script><script type="text/javascript" src="../../mxClient.min.js"></script><script type="text/javascript" src="../../index.js"></script><script type="text/javascript" src="../../search.js"></script><script type="text/javascript" src="../../extra-index.js"></script><script type="text/javascript" src="../../search_data.js"></script><script type="text/javascript" src="../../hierarchy_data.js"></script><link rel="icon" href="../../favicon.ico" type="image/x-icon"></link><title>Java Documentation</title></head><body><div class="container main-content"><div class="row-fluid"><div class="span3" id="sidebar">        <style>
+.navbar .brand {
+	display: inline-block;
+	float: none;
+	text-shadow: 0 0 0 transparent;
+</style><nav class="nav"><div class="navbar"><div class="navbar-inner"><div class="container"><a class="brand" style="color:#000000" href="../../index.html">Java Documentation</a></div></div></div></nav><div class="well sidebar-search"><form class="form-search" id="searchForm"><div class="input-prepend input-block-level"><span class="add-on"><i class="icon-search"></i></span><input id="search" type="text" placeholder="Search" autocomplete="off"/></div></form></div><div class="well sidebar-nav"><div id="nav"></div></div></div><div class="span9" id="dox-content"><div class="page-header"><h1><small>info-file</small> BlueJ</h1></div><div class="body"><div class="doc doc-main"><div class="info-file-content" dir="auto">                &lt;h1&gt;מדריך BlueJ&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;שימו לב:&lt;/strong&gt; מומלץ להשתמש בסביבות העבודה Eclipse או IntelliJ מכיוון שהן נוחות יותר, ומקנות כלי עבודה טובים יותר.&lt;/p&gt;
+&lt;p&gt;פתחו את BlueJ&lt;/p&gt;
+&lt;p&gt;בחלון הכניסה של BlueJ לחצו על Project ואז New Project.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Hint" src="../../img/IdeInstructions/BlueJ/image5.png"&gt;&lt;/p&gt;
+&lt;p&gt;המסך שלכם צריך להיראות כך:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Hint" src="../../img/IdeInstructions/BlueJ/image7.png"&gt;&lt;/p&gt;
+&lt;p&gt;היכנסו לתפריט tools ובחרו את preferences:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Hint" src="../../img/IdeInstructions/BlueJ/image6.png"&gt;&lt;/p&gt;
+&lt;p&gt;בחרו Libraries ולחצו על Add:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Hint" src="../../img/IdeInstructions/BlueJ/image9.png"&gt;&lt;/p&gt;
+&lt;p&gt;כעת מצאו את הקובץ PirateGame.jar שהורדתם מהאתר:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Hint" src="../../img/IdeInstructions/BlueJ/image8.png"&gt;&lt;/p&gt;
+&lt;p&gt;כעת לחצו על Open ועל OK בהודעה שתעלה.&lt;/p&gt;
+&lt;p&gt;לאחר מכן, סגרו ופתחו מחדש את ה- BlueJ.&lt;/p&gt;
+&lt;p&gt;לחצו קליק ימני עם העכבר על חלון העבודה ובחרו New Package. קראו ל- package בשם bots.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Hint" src="../../img/IdeInstructions/BlueJ/image2.png"&gt;&lt;/p&gt;
+&lt;p&gt;כעת היכנסו ל- package bots.
+בצד שמאל למעלה לחצו על New Class וצרו מחלקה בשם MyBot.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Hint" src="../../img/IdeInstructions/BlueJ/image1.png"&gt;&lt;/p&gt;
+&lt;p&gt;כעת כתבו את שורות הקוד הבאות:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;package&lt;/span&gt; &lt;span class="nn"&gt;bots&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pirates.*&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;MyBot&lt;/span&gt; &lt;span class="kd"&gt;implements&lt;/span&gt; &lt;span class="n"&gt;PirateBot&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+
+    &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;doTurn&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;PirateGame&lt;/span&gt; &lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+        &lt;span class="c1"&gt;// Enter your code here:&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;חשוב לציין כי כל קובץ של הבוט שלכם צריך להיות ב package bots עם השורה &lt;code&gt;package bots;&lt;/code&gt; בתחילתו.&lt;/p&gt;
+&lt;p&gt;כעת אתם מוכנים לכתוב את הבוט שלכם!
+בהצלחה!&lt;/p&gt;</div></div></div><footer class="section site-footer"><div class="container"><div class="copyright"><p style="color:#000000">The official documentation of the Piratez competition, Version: 2018</p><p style="color:#000000">&copy; 2018 &nbsp;</p></div></div></footer></div></div></div><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>

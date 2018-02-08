@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en"><!-- use theme color or fallback -->
+<!--use textcolor from settings, otherwise create a contrasting color to theme color-->
+<head><meta charset="utf-8"/><link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet"/><link href="../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/><link href="../bootstrap/css/bootstrap-select.min.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,600italic,400" rel="stylesheet" type="text/css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet" type="text/css"/><script src="../jquery-1.9.1.min.js"></script><script src="../bootstrap/js/bootstrap.min.js"></script><script src="../bootstrap/js/bootstrap-select.min.js"></script><link href="../styles.css" rel="stylesheet"/><link href="../extra-styles.css" rel="stylesheet"/><link href="../haxe-nav.css" rel="stylesheet"/><link href="../codehilite.css" rel="stylesheet"/><script type="text/javascript">var dox = {rootPath: "../",platforms: ["documentation"]};</script><script type="text/javascript" src="../new.js"></script><script type="text/javascript" src="../nav.js"></script><script type="text/javascript" src="../mxClient.min.js"></script><script type="text/javascript" src="../index.js"></script><script type="text/javascript" src="../search.js"></script><script type="text/javascript" src="../extra-index.js"></script><script type="text/javascript" src="../search_data.js"></script><script type="text/javascript" src="../hierarchy_data.js"></script><link rel="icon" href="../favicon.ico" type="image/x-icon"></link><title>Java Documentation</title></head><body><div class="container main-content"><div class="row-fluid"><div class="span3" id="sidebar">        <style>
+.navbar .brand {
+	display: inline-block;
+	float: none;
+	text-shadow: 0 0 0 transparent;
+</style><nav class="nav"><div class="navbar"><div class="navbar-inner"><div class="container"><a class="brand" style="color:#000000" href="../index.html">Java Documentation</a></div></div></div></nav><div class="well sidebar-search"><form class="form-search" id="searchForm"><div class="input-prepend input-block-level"><span class="add-on"><i class="icon-search"></i></span><input id="search" type="text" placeholder="Search" autocomplete="off"/></div></form></div><div class="well sidebar-nav"><div id="nav"></div></div></div><div class="span9" id="dox-content"><div class="page-header"><h1><small>info-file</small> שבוע ראשון - אסטרואיד</h1></div><div class="body"><div class="doc doc-main"><div class="info-file-content" dir="auto">                &lt;h1&gt;שלב האתגרים - שבוע 1&lt;/h1&gt;
+&lt;p&gt;השבוע, נוסיף למשחק את אובייקט האסטרואיד.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;אסטרואיד הוא אובייקט עגול במשחק. לעומת רוב האובייקטים במפה, האסטרואיד אינו נקודתי, אלא בעל רדיוס, ולכן כל האינטראקציות איתו נעשות תוך התחשבות ברדיוס הזה.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;פיראטים יכולים לדחוף אסטרואידים, והשימוש בפונקציית canPush הוא בדיוק אותו הדבר עבור האסטרואידים.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;שימו לב: מכיוון שלאסטרואיד יש גודל, מספיק שחלק ממנו יהיה ברדיוס הדחיפה של הפיראט על מנת שיהיה אפשר לדחוף אותו.&lt;/li&gt;
+&lt;li&gt;אסטרואיד שנדחף, ינוע בכיוון שהוא נדחף בו עד שהוא ידחף שוב על ידי פיראט אחר או עד שהוא יצא מהמפה.&lt;/li&gt;
+&lt;li&gt;אסטרואיד שיצא מחוץ למפה ימות, ויחזור למשחק בנקודה ההתחלתית שלו אחרי מספר מסוים של תורות.&lt;/li&gt;
+&lt;li&gt;אם אסטרואיד פוגע בפיראט, הפיראט מתרסק.&lt;/li&gt;
+&lt;li&gt;אם שני אסטרואידים מתנגשים, שניהם מתרסקים.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2&gt;שינויים ב-API&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;שינויים ב-PirateGame:&lt;ul&gt;
+&lt;li&gt;הפעולה ()getAllAsteroids - מחזירה את רשימת כל האסטרואידים במשחק (בין אם הם נמצאים על המפה ובין אם לא).&lt;/li&gt;
+&lt;li&gt;הפעולה ()getLivingAsteroids - מחזירה את רשימת כל האסטרואידים שנמצאים כרגע במפה. שימו לב - היא יכולה להיות ריקה!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;המחלקה SpaceObject:
+    למשחק נוספה המחלקה SpaceObject, ממנה יורשים Pirate ו- Asteroid. לכל האובייקטים מסוג זה קיים המאפיין הבא:&lt;ul&gt;
+&lt;li&gt;size - שמציין את הגודל של האובייקט (עבור פיראטים, הגודל הוא 0).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;למחלקה Asteroid יש תכונות שימושיות רבות, כגון:&lt;ul&gt;
+&lt;li&gt;maxSpeed - המהירות של האסטרואיד&lt;/li&gt;
+&lt;li&gt;spawnTurns - מספר התורות עד שהאסטרואיד חוזר לחיים&lt;/li&gt;
+&lt;li&gt;direction - הכיוון אליו ילך האסטרואיד, אם לא ידחף במהלך התור הנוכחי&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2&gt;שינויים ב-Bot לדוגמא&lt;/h2&gt;
+&lt;p&gt;ישנן דרכים רבות לעבוד עם האסטרואידים. דרך אחת, שנממש פה, היא לדחוף אסטרואיד לעבר הקפסולה היריב, אם הוא קרוב אלינו מספיק. לכן, נוסיף בפונקציה tryPush שלנו לולאה נוספת שעוברת על האסטרואידים ודוחפת אותם אם היא יכולה:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;// Go over all living asteroids&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Asteroid&lt;/span&gt; &lt;span class="n"&gt;asteroid&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getLivingAsteroids&lt;/span&gt;&lt;span class="o"&gt;())&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="c1"&gt;// Check if the pirate can push the asteroid&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pirate&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;canPush&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;asteroid&lt;/span&gt;&lt;span class="o"&gt;))&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+        &lt;span class="c1"&gt;// Push asteroid!&lt;/span&gt;
+        &lt;span class="n"&gt;pirate&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;push&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;asteroid&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getEnemyCapsules&lt;/span&gt;&lt;span class="o"&gt;()[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;]);&lt;/span&gt;
+
+        &lt;span class="c1"&gt;// Print a message&lt;/span&gt;
+        &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;pirate &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;pirate&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot; pushes &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;asteroid&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot; towards &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getEnemyCapsules&lt;/span&gt;&lt;span class="o"&gt;()[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;]);&lt;/span&gt;
+
+        &lt;span class="c1"&gt;// Did push&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;בדומה ללולאה העוברת על האויבים, הלולאה הזו בודקת עבור כל אסטרואיד האם הוא ניתן לדחיפה, ואם מוצאת אסטרואיד שכזה, גורמת לפיראט לדחוף אותו.&lt;/p&gt;
+&lt;p&gt;הפונקציה tryPush המעודכנת תיראה כך:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cm"&gt;/**&lt;/span&gt;
+&lt;span class="cm"&gt; * Makes the pirate try to push an enemy pirate or an asteroid. Returns True if it did.&lt;/span&gt;
+&lt;span class="cm"&gt; *&lt;/span&gt;
+&lt;span class="cm"&gt; * @param pirate - the pushing pirate&lt;/span&gt;
+&lt;span class="cm"&gt; * @param game - the current game state&lt;/span&gt;
+&lt;span class="cm"&gt; * @return - true if the pirate pushed&lt;/span&gt;
+&lt;span class="cm"&gt; */&lt;/span&gt;
+&lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kt"&gt;boolean&lt;/span&gt; &lt;span class="nf"&gt;tryPush&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Pirate&lt;/span&gt; &lt;span class="n"&gt;pirate&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;PirateGame&lt;/span&gt; &lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="c1"&gt;// Go over all enemies&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Pirate&lt;/span&gt; &lt;span class="n"&gt;enemy&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getEnemyLivingPirates&lt;/span&gt;&lt;span class="o"&gt;())&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+        &lt;span class="c1"&gt;// Check if the pirate can push the enemy&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pirate&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;canPush&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;enemy&lt;/span&gt;&lt;span class="o"&gt;))&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+            &lt;span class="c1"&gt;// Push enemy!&lt;/span&gt;
+            &lt;span class="n"&gt;pirate&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;push&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;enemy&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;enemy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;initialLocation&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+
+            &lt;span class="c1"&gt;// Print a message&lt;/span&gt;
+            &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;pirate &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;pirate&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot; pushes &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;enemy&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot; towards &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;enemy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;initialLocation&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+
+            &lt;span class="c1"&gt;// Did push&lt;/span&gt;
+            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+        &lt;span class="o"&gt;}&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+
+    &lt;span class="c1"&gt;// Go over all living asteroids&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Asteroid&lt;/span&gt; &lt;span class="n"&gt;asteroid&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getLivingAsteroids&lt;/span&gt;&lt;span class="o"&gt;())&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+        &lt;span class="c1"&gt;// Check if the pirate can push the asteroid&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pirate&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;canPush&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;asteroid&lt;/span&gt;&lt;span class="o"&gt;))&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+            &lt;span class="c1"&gt;// Push asteroid!&lt;/span&gt;
+            &lt;span class="n"&gt;pirate&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;push&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;asteroid&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getEnemyCapsules&lt;/span&gt;&lt;span class="o"&gt;()[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;]);&lt;/span&gt;
+
+            &lt;span class="c1"&gt;// Print a message&lt;/span&gt;
+            &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;pirate &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;pirate&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot; pushes &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;asteroid&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot; towards &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getEnemyCapsules&lt;/span&gt;&lt;span class="o"&gt;()[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;]);&lt;/span&gt;
+
+            &lt;span class="c1"&gt;// Did push&lt;/span&gt;
+            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+        &lt;span class="o"&gt;}&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+
+    &lt;span class="c1"&gt;// Didn&amp;#39;t push&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="kc"&gt;false&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</div></div></div><footer class="section site-footer"><div class="container"><div class="copyright"><p style="color:#000000">The official documentation of the Piratez competition, Version: 2018</p><p style="color:#000000">&copy; 2018 &nbsp;</p></div></div></footer></div></div></div><script src="..//highlighter.js"></script><link href="../highlighter.css" rel="stylesheet"/></body></html>

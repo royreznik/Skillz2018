@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"><!-- use theme color or fallback -->
+<!--use textcolor from settings, otherwise create a contrasting color to theme color-->
+<head><meta charset="utf-8"/><link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-select.min.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,600italic,400" rel="stylesheet" type="text/css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet" type="text/css"/><script src="../../jquery-1.9.1.min.js"></script><script src="../../bootstrap/js/bootstrap.min.js"></script><script src="../../bootstrap/js/bootstrap-select.min.js"></script><link href="../../styles.css" rel="stylesheet"/><link href="../../extra-styles.css" rel="stylesheet"/><link href="../../haxe-nav.css" rel="stylesheet"/><link href="../../codehilite.css" rel="stylesheet"/><script type="text/javascript">var dox = {rootPath: "../../",platforms: ["documentation"]};</script><script type="text/javascript" src="../../new.js"></script><script type="text/javascript" src="../../nav.js"></script><script type="text/javascript" src="../../mxClient.min.js"></script><script type="text/javascript" src="../../index.js"></script><script type="text/javascript" src="../../search.js"></script><script type="text/javascript" src="../../extra-index.js"></script><script type="text/javascript" src="../../search_data.js"></script><script type="text/javascript" src="../../hierarchy_data.js"></script><link rel="icon" href="../../favicon.ico" type="image/x-icon"></link><title>Java Documentation</title></head><body><div class="container main-content"><div class="row-fluid"><div class="span3" id="sidebar">        <style>
+.navbar .brand {
+	display: inline-block;
+	float: none;
+	text-shadow: 0 0 0 transparent;
+</style><nav class="nav"><div class="navbar"><div class="navbar-inner"><div class="container"><a class="brand" style="color:#000000" href="../../index.html">Java Documentation</a></div></div></div></nav><div class="well sidebar-search"><form class="form-search" id="searchForm"><div class="input-prepend input-block-level"><span class="add-on"><i class="icon-search"></i></span><input id="search" type="text" placeholder="Search" autocomplete="off"/></div></form></div><div class="well sidebar-nav"><div id="nav"></div></div></div><div class="span9" id="dox-content"><div class="page-header"><h1><small>info-file</small> Eclipse</h1></div><div class="body"><div class="doc doc-main"><div class="info-file-content" dir="auto">                &lt;h1&gt;מדריך Eclipse&lt;/h1&gt;
+&lt;p&gt;פתחו Eclipse&lt;/p&gt;
+&lt;p&gt;סגרו את חלון ה- Welcome אם הוא מופיע.&lt;/p&gt;
+&lt;p&gt;צרו פרוייקט חדש:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Hint" src="../../img/IdeInstructions/Eclipse/image7.png"&gt;&lt;/p&gt;
+&lt;p&gt;בחלון שנפתח תנו שם לפרוייקט שלכם, לדוגמא: skillz.&lt;/p&gt;
+&lt;p&gt;ניתן להוריד את הסימון שמופיע בשדה Use default location ולבחור בשולחן העבודה הנמצא ב:&lt;/p&gt;
+&lt;p&gt;C:/Users/{user_name}/Desktop.&lt;/p&gt;
+&lt;p&gt;לחצו על finish.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Hint" src="../../img/IdeInstructions/Eclipse/image5.png"&gt;&lt;/p&gt;
+&lt;p&gt;היכנסו להגדרות הפרויקט:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Hint" src="../../img/IdeInstructions/Eclipse/image1.png"&gt;&lt;/p&gt;
+&lt;p&gt;בחלק השמאלי של החלון, לחצו על Java Build Path. בחרו ב- Libraries (בחלק העליון של החלון).&lt;/p&gt;
+&lt;p&gt;כעת, לחצו על Add External JARs וחפשו את הקובץ  PirateGame.jar שהורדתם מהאתר. לאחר הבחירה, לחצו על Open ואז על Apply and Close.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Hint" src="../../img/IdeInstructions/Eclipse/image2.png"&gt;&lt;/p&gt;
+&lt;p&gt;לאחר מכן, לחצו עם הכפתור הימני על תיקיית src של הפרוייקט, וצרו package חדש בשם bots:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Hint" src="../../img/IdeInstructions/Eclipse/image3.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Hint" src="../../img/IdeInstructions/Eclipse/image6.png"&gt;&lt;/p&gt;
+&lt;p&gt;בתוך ה- package, צרו מחלקה בשם MyBot:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Hint" src="../../img/IdeInstructions/Eclipse/image4.png"&gt;&lt;/p&gt;
+&lt;p&gt;כתבו את שורות הקוד הבאות:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;package&lt;/span&gt; &lt;span class="nn"&gt;bots&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pirates.*&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;MyBot&lt;/span&gt; &lt;span class="kd"&gt;implements&lt;/span&gt; &lt;span class="n"&gt;PirateBot&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+
+    &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;doTurn&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;PirateGame&lt;/span&gt; &lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+        &lt;span class="c1"&gt;// Enter your code here:&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;כעת אתם מוכנים לכתוב את הבוט שלכם!
+בהצלחה!&lt;/p&gt;</div></div></div><footer class="section site-footer"><div class="container"><div class="copyright"><p style="color:#000000">The official documentation of the Piratez competition, Version: 2018</p><p style="color:#000000">&copy; 2018 &nbsp;</p></div></div></footer></div></div></div><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>

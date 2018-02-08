@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en"><!-- use theme color or fallback -->
+<!--use textcolor from settings, otherwise create a contrasting color to theme color-->
+<head><meta charset="utf-8"/><link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet"/><link href="../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/><link href="../bootstrap/css/bootstrap-select.min.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,600italic,400" rel="stylesheet" type="text/css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet" type="text/css"/><script src="../jquery-1.9.1.min.js"></script><script src="../bootstrap/js/bootstrap.min.js"></script><script src="../bootstrap/js/bootstrap-select.min.js"></script><link href="../styles.css" rel="stylesheet"/><link href="../extra-styles.css" rel="stylesheet"/><link href="../haxe-nav.css" rel="stylesheet"/><link href="../codehilite.css" rel="stylesheet"/><script type="text/javascript">var dox = {rootPath: "../",platforms: ["documentation"]};</script><script type="text/javascript" src="../new.js"></script><script type="text/javascript" src="../nav.js"></script><script type="text/javascript" src="../mxClient.min.js"></script><script type="text/javascript" src="../index.js"></script><script type="text/javascript" src="../search.js"></script><script type="text/javascript" src="../extra-index.js"></script><script type="text/javascript" src="../search_data.js"></script><script type="text/javascript" src="../hierarchy_data.js"></script><link rel="icon" href="../favicon.ico" type="image/x-icon"></link><title>Java Documentation</title></head><body><div class="container main-content"><div class="row-fluid"><div class="span3" id="sidebar">        <style>
+.navbar .brand {
+	display: inline-block;
+	float: none;
+	text-shadow: 0 0 0 transparent;
+</style><nav class="nav"><div class="navbar"><div class="navbar-inner"><div class="container"><a class="brand" style="color:#000000" href="../index.html">Java Documentation</a></div></div></div></nav><div class="well sidebar-search"><form class="form-search" id="searchForm"><div class="input-prepend input-block-level"><span class="add-on"><i class="icon-search"></i></span><input id="search" type="text" placeholder="Search" autocomplete="off"/></div></form></div><div class="well sidebar-nav"><div id="nav"></div></div></div><div class="span9" id="dox-content"><div class="page-header"><h1><small>info-file</small> שבוע שני - חור תולעת</h1></div><div class="body"><div class="doc doc-main"><div class="info-file-content" dir="auto">                &lt;h1&gt;שלב האתגרים - שבוע 2&lt;/h1&gt;
+&lt;p&gt;השבוע, נוסיף למשחק את אובייקט חור התולעת.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;לכל חור תולעת יש בן-זוג אליו הוא מחובר - כאשר פיראט עומד בטווח של חור תולעת, הוא משתגר לבן הזוג שלו.&lt;/li&gt;
+&lt;li&gt;השיגור מבוצע באופן אוטומטי, כלומר אין צורך לבצע פעולה!&lt;/li&gt;
+&lt;li&gt;ניתן לדחוף חורי תולעת וכך להזיז את מיקומם. בניגוד לפיראטים, לא ניתן לדחוף חורי תולעת מחוץ למפה, הם יישארו בתחומי המפה תמיד.&lt;/li&gt;
+&lt;li&gt;אחרי שפיראט עובר דרך חור תולעת, הוא ובן הזוג שלו יהפכו לכבויים למספר מסוים של תורות, ועמידה עליהם לא תעשה דבר.&lt;/li&gt;
+&lt;li&gt;אם שני חורי תולעת נמצאים אחד בטווח של השני (כלומר הם חופפים), שניהם יהפכו לכבויים, וידלקו בשנית רק מספר מסוים של תורות לאחר שיופרדו.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2&gt;שינויים ב-API&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;שינויים ב-PirateGame:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;הפעולה ()getAllWormholes - מחזירה את רשימת כל חורי התולעת במפה.&lt;/li&gt;
+&lt;li&gt;הפעולה ()getActiveWormholes - מחזירה את רשימת כל חורי התולעת
+    במפה שהם פעילים, כלומר שניתן לעבור דרכם.&lt;/li&gt;
+&lt;li&gt;הפעולה ()getInactiveWormholes - מחזירה את רשימת כל חורי
+    התולעת במפה שאינם פעילים, כלומר שלא ניתן לעבור דרכם.&lt;/li&gt;
+&lt;li&gt;הקבוע wormholeRange - המרחק שעל פיראט להיות מחור התולעת כדי
+    שיוכל להשתגר דרכו.&lt;/li&gt;
+&lt;li&gt;הקבוע wormholeInactiveTurns - כמות התורות שבהם חור תולעת אינו
+    פעיל לאחר שעוברים דרכו.&lt;/li&gt;
+&lt;li&gt;למחלקה Wormhole יש תכונות שימושיות רבות, כגון:&lt;/li&gt;
+&lt;li&gt;partner - בן הזוג של חור התולעת, שאליו יישתגרו האובייקטים שדרכו
+    על חור התולעת הזה&lt;/li&gt;
+&lt;li&gt;isActive - האם חור התולעת הזה פעיל או לא.&lt;/li&gt;
+&lt;li&gt;turnToReactivate - כמות התורות עד שחור התולעת הזה יחזור להיות
+    פעיל (0 אם הוא כבר פעיל).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2&gt;שינויים ב-Bot לדוגמא&lt;/h2&gt;
+&lt;p&gt;ישנן דרכים רבות לשימוש בחורי התולעת. דרך אחת, שנממש פה, היא לבדוק האם יותר כדאי לנו ללכת ישר לספינת האם, או להשתמש בחור התולעת כדי להגיע מהר יותר. נחליף את החלק בקוד שלנו שמטפל בתזוזה לספינת האם בקוד הבא (בסוף הקובץ מופיעה הפונקציה doTurn במלואה, לנוחותכם):&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;// Get my mothership.&lt;/span&gt;
+&lt;span class="n"&gt;Mothership&lt;/span&gt; &lt;span class="n"&gt;mothership&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getMyMotherships&lt;/span&gt;&lt;span class="o"&gt;()[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;];&lt;/span&gt;
+&lt;span class="c1"&gt;// Get a Wormhole&lt;/span&gt;
+&lt;span class="n"&gt;Wormhole&lt;/span&gt; &lt;span class="n"&gt;wormhole&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getAllWormholes&lt;/span&gt;&lt;span class="o"&gt;()[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;];&lt;/span&gt;
+&lt;span class="c1"&gt;// If wormhole is active and it&amp;#39;s shorter to get to the wormhole and from its partner to the&lt;/span&gt;
+&lt;span class="c1"&gt;// mothership than going straight there, do it!&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;worhmole&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;isActive&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pirate&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;distance&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mothership&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;pirate&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;distance&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;wormhole&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;wormhole&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;partner&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;distance&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mothership&lt;/span&gt;&lt;span class="o"&gt;)))&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="c1"&gt;// Go towards the wormhole.&lt;/span&gt;
+    &lt;span class="n"&gt;pirate&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;sail&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;wormhole&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="c1"&gt;// Go towards the mothership.&lt;/span&gt;
+    &lt;span class="n"&gt;pirate&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;sail&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mothership&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;בקטע זה אנחנו בודקים אם ללכת לחור התולעת ולהשתגר ממנו לבן הזוג שלו ומשם ללכת לספינת האם יותר קצר מללכת ישירות לספינת האם. אם כן אנחנו הולכים לכיוון חור התולעת, אם לא נלך כרגיל לספינת האם.&lt;/p&gt;
+&lt;p&gt;פונקציית הdoTurn המלאה:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cm"&gt;/**&lt;/span&gt;
+&lt;span class="cm"&gt; * Makes the bot run a single turn.&lt;/span&gt;
+&lt;span class="cm"&gt; *&lt;/span&gt;
+&lt;span class="cm"&gt; * @param game - The current game state.&lt;/span&gt;
+&lt;span class="cm"&gt; */&lt;/span&gt;
+&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;doTurn&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;PirateGame&lt;/span&gt; &lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="c1"&gt;// Get one of my pirates.&lt;/span&gt;
+    &lt;span class="n"&gt;Pirate&lt;/span&gt; &lt;span class="n"&gt;pirate&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getMyLivingPirates&lt;/span&gt;&lt;span class="o"&gt;()[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;];&lt;/span&gt;
+
+    &lt;span class="c1"&gt;// Try to push, if you didn&amp;#39;t - take the capsule and go to the mothership.&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;(!&lt;/span&gt;&lt;span class="n"&gt;tryPush&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pirate&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;))&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+        &lt;span class="c1"&gt;// If the pirate doesn&amp;#39;t have a capsule, go and get it!&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pirate&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;capsule&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="kc"&gt;null&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+            &lt;span class="n"&gt;Capsule&lt;/span&gt; &lt;span class="n"&gt;capsule&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getMyCapsules&lt;/span&gt;&lt;span class="o"&gt;()[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;];&lt;/span&gt;
+            &lt;span class="n"&gt;pirate&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;sail&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;capsule&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+        &lt;span class="o"&gt;}&lt;/span&gt;
+        &lt;span class="c1"&gt;// Else, go to my mothership.&lt;/span&gt;
+        &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+            &lt;span class="c1"&gt;// Get my mothership.&lt;/span&gt;
+            &lt;span class="n"&gt;Mothership&lt;/span&gt; &lt;span class="n"&gt;mothership&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getMyMotherships&lt;/span&gt;&lt;span class="o"&gt;()[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;];&lt;/span&gt;
+            &lt;span class="c1"&gt;// Get a Wormhole&lt;/span&gt;
+            &lt;span class="n"&gt;Wormhole&lt;/span&gt; &lt;span class="n"&gt;wormhole&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getAllWormholes&lt;/span&gt;&lt;span class="o"&gt;()[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;];&lt;/span&gt;
+            &lt;span class="c1"&gt;// If wormhole is active and it&amp;#39;s shorter to get to the wormhole and from &lt;/span&gt;
+            &lt;span class="c1"&gt;// its partner to the mothership than going straight there, do it!&lt;/span&gt;
+            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;wormhole&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;isActive&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pirate&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;distance&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mothership&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;pirate&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;distance&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;wormhole&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;wormhole&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;partner&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;distance&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mothership&lt;/span&gt;&lt;span class="o"&gt;)))&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+                &lt;span class="n"&gt;pirate&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;sail&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;wormhole&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+            &lt;span class="o"&gt;}&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+                &lt;span class="c1"&gt;// Go towards the mothership.&lt;/span&gt;
+                &lt;span class="n"&gt;pirate&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;sail&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mothership&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+            &lt;span class="o"&gt;}&lt;/span&gt;
+        &lt;span class="o"&gt;}&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;שימו לב:&lt;/strong&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;גם אסטרואידים יכולים להשתגר דרך חור תולעת. אין הבדל בין שיגור של אסטרואיד לשל פיראט.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;השיגור מתבצע לפי מיקום האובייקטים בסוף התור - כלומר אם פיראט נדחף לתוך חור תולעת, או שחור תולעת נדחף על פיראט, הפיראט יישתגר&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</div></div></div><footer class="section site-footer"><div class="container"><div class="copyright"><p style="color:#000000">The official documentation of the Piratez competition, Version: 2018</p><p style="color:#000000">&copy; 2018 &nbsp;</p></div></div></footer></div></div></div><script src="..//highlighter.js"></script><link href="../highlighter.css" rel="stylesheet"/></body></html>

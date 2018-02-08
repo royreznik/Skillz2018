@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"><!-- use theme color or fallback -->
+<!--use textcolor from settings, otherwise create a contrasting color to theme color-->
+<head><meta charset="utf-8"/><link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet"/><link href="../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/><link href="../bootstrap/css/bootstrap-select.min.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,600italic,400" rel="stylesheet" type="text/css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet" type="text/css"/><script src="../jquery-1.9.1.min.js"></script><script src="../bootstrap/js/bootstrap.min.js"></script><script src="../bootstrap/js/bootstrap-select.min.js"></script><link href="../styles.css" rel="stylesheet"/><link href="../extra-styles.css" rel="stylesheet"/><link href="../haxe-nav.css" rel="stylesheet"/><link href="../codehilite.css" rel="stylesheet"/><script type="text/javascript">var dox = {rootPath: "../",platforms: ["documentation"]};</script><script type="text/javascript" src="../new.js"></script><script type="text/javascript" src="../nav.js"></script><script type="text/javascript" src="../mxClient.min.js"></script><script type="text/javascript" src="../index.js"></script><script type="text/javascript" src="../search.js"></script><script type="text/javascript" src="../extra-index.js"></script><script type="text/javascript" src="../search_data.js"></script><script type="text/javascript" src="../hierarchy_data.js"></script><link rel="icon" href="../favicon.ico" type="image/x-icon"></link><title>Java Documentation</title></head><body><div class="container main-content"><div class="row-fluid"><div class="span3" id="sidebar">        <style>
+.navbar .brand {
+	display: inline-block;
+	float: none;
+	text-shadow: 0 0 0 transparent;
+</style><nav class="nav"><div class="navbar"><div class="navbar-inner"><div class="container"><a class="brand" style="color:#000000" href="../index.html">Java Documentation</a></div></div></div></nav><div class="well sidebar-search"><form class="form-search" id="searchForm"><div class="input-prepend input-block-level"><span class="add-on"><i class="icon-search"></i></span><input id="search" type="text" placeholder="Search" autocomplete="off"/></div></form></div><div class="well sidebar-nav"><div id="nav"></div></div></div><div class="span9" id="dox-content"><div class="page-header"><h1><small>info-file</small> מדריך לשימוש ב-API</h1></div><div class="body"><div class="doc doc-main"><div class="info-file-content" dir="auto">                &lt;p&gt;ממשק תכנות יישומים, המוכר בשמו הלועזי (API (Application Programming Interface הוא ערכה של פעולות ואובייקטים המוצעים לשימוש בכתיבת תוכנה. דוגמאות קלאסיות ל-API היא פונקציית ההדפסה &lt;span dir="ltr"&gt;System.out.println()&lt;/span&gt;, או הפעולות ב- Math. פעולות אלו הן פעולות בהן השתמשתם פעמים רבות בעבר מבלי שנדרשתם לכתוב אותן בעצמכם.&lt;/p&gt;
+&lt;p&gt;ה- API של המשחק כולל בתוכו את כל הפעולות ההכרחיות לצורך כתיבת בוט, וכן מספר פעולות עזר שיוכלו לסייע לכתיבת הבוט שלכם. לדוגמא, לכל האובייקטים במשחק יש פונקציית inRange (השם שונה בכל שפה, בהתאם למוסכמות של השפה) ופונקציית distance, כדי שלא תצטרכו לממש פונקציות כאלו בעצמכם.&lt;/p&gt;
+&lt;p&gt;לכל שפה יש מוסכמות משלה עבור מבנה ה- API ושמות הדברים בו. בכל השפות בתחרות שמות המחלקות נכתבים ב- UpperCamelCase, לדוגמה PirateGame או MapObject. ההבדל בין השפות בא לידי ביטוי בשמות הפונקציות והמשתנים:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ב- Python פונקציות ומשתנים נכתבים ב- snake_case (למשל- in_range).&lt;/li&gt;
+&lt;li&gt;ב- &lt;span dir="ltr"&gt;C#&lt;/span&gt; פונקציות פומביות נכתבות ב- UpperCamelCase (למשל- InRange).&lt;/li&gt;
+&lt;li&gt;ב- Java וב- JavaScript פונקציות ומשתנים נכתבים ב- lowerCamelCase (למשל-inRange).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;ה- API של כל השפות זהה פרט להבדלי השמות הנובעים מהמוסכמות השונות בשפות השונות.&lt;/p&gt;
+&lt;p&gt;לשם נוחות, ה-API מחולק למחלקות וקבצים. מרבית ה- API הרלוונטי עבורכם נמצא במחלקה Pirate, המייצגת את הפיראטים בהם אתם שולטים, ובמחלקה PirateGame, האובייקט המכיל את מצב המשחק הנוכחי, ומסופק לבוט שלכם בתחילת כל תור (זה, למעשה, ה- game שאתם מקבלים כפרמטר לפונקציית ה- doTurn שלכם).&lt;/p&gt;
+&lt;h2&gt;הדף הראשי - index.html&lt;/h2&gt;
+&lt;p&gt;בדף זה מופיעים עץ ירושה ורשימה של כל המחלקות הקיימות במשחק. לחיצה על שם המחלקה בעץ או ברשימה תפתח רשימה של כל הפונקציות והמשתנים השייכים לאותה מחלקה, יחד עם תיאור קצר.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="index" src="../img/Api/index.png"&gt;&lt;/p&gt;
+&lt;p&gt;נוסף על הדף הראשי, לכל מחלקה קיים דף משלה, המציג את המידע המלא על אודות המחלקה.&lt;/p&gt;
+&lt;p&gt;לחיצה על הכותרת בראש הדף (בתמונה המוצגת, "C# Documentation") תוביל בחזרה אל הדף הראשי מכל דף בו תהיו.&lt;/p&gt;
+&lt;h2&gt;חיפוש ב- API&lt;/h2&gt;
+&lt;p&gt;בכל הדפים ב- API מופיע בצד שמאל התפריט הבא:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="sidebar" src="../img/Api/sidebar.png"&gt;&lt;/p&gt;
+&lt;p&gt;בתפריט מופיעים שמות המחלקות במשחק, כאשר לחיצה על מחלקה מקשרת ישירות לדף שלה ב- API.&lt;/p&gt;
+&lt;p&gt;לחיצה על Info Pages תפתח תת-תפריט של קבצי הסבר נוספים למשחק. כאן תוכלו למצוא את חוקי המשחק, ספריות מותרות לשימוש, הנחיות ליבוא קבצים ודפי מידע נוספים.&lt;/p&gt;
+&lt;p&gt;הקלדה בתיבת החיפוש תשנה את תוכן התפריט, כך שנוסף על מחלקות המתאימות למילות החיפוש, יוצגו גם קישורים לפונקציות או ולמשתנים רלוונטיים.&lt;/p&gt;
+&lt;p&gt;למשל:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="search" src="../img/Api/search.png"&gt;&lt;/p&gt;</div></div></div><footer class="section site-footer"><div class="container"><div class="copyright"><p style="color:#000000">The official documentation of the Piratez competition, Version: 2018</p><p style="color:#000000">&copy; 2018 &nbsp;</p></div></div></footer></div></div></div><script src="..//highlighter.js"></script><link href="../highlighter.css" rel="stylesheet"/></body></html>

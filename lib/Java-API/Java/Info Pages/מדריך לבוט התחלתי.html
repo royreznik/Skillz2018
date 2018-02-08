@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en"><!-- use theme color or fallback -->
+<!--use textcolor from settings, otherwise create a contrasting color to theme color-->
+<head><meta charset="utf-8"/><link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet"/><link href="../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/><link href="../bootstrap/css/bootstrap-select.min.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,600italic,400" rel="stylesheet" type="text/css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet" type="text/css"/><script src="../jquery-1.9.1.min.js"></script><script src="../bootstrap/js/bootstrap.min.js"></script><script src="../bootstrap/js/bootstrap-select.min.js"></script><link href="../styles.css" rel="stylesheet"/><link href="../extra-styles.css" rel="stylesheet"/><link href="../haxe-nav.css" rel="stylesheet"/><link href="../codehilite.css" rel="stylesheet"/><script type="text/javascript">var dox = {rootPath: "../",platforms: ["documentation"]};</script><script type="text/javascript" src="../new.js"></script><script type="text/javascript" src="../nav.js"></script><script type="text/javascript" src="../mxClient.min.js"></script><script type="text/javascript" src="../index.js"></script><script type="text/javascript" src="../search.js"></script><script type="text/javascript" src="../extra-index.js"></script><script type="text/javascript" src="../search_data.js"></script><script type="text/javascript" src="../hierarchy_data.js"></script><link rel="icon" href="../favicon.ico" type="image/x-icon"></link><title>Java Documentation</title></head><body><div class="container main-content"><div class="row-fluid"><div class="span3" id="sidebar">        <style>
+.navbar .brand {
+	display: inline-block;
+	float: none;
+	text-shadow: 0 0 0 transparent;
+</style><nav class="nav"><div class="navbar"><div class="navbar-inner"><div class="container"><a class="brand" style="color:#000000" href="../index.html">Java Documentation</a></div></div></div></nav><div class="well sidebar-search"><form class="form-search" id="searchForm"><div class="input-prepend input-block-level"><span class="add-on"><i class="icon-search"></i></span><input id="search" type="text" placeholder="Search" autocomplete="off"/></div></form></div><div class="well sidebar-nav"><div id="nav"></div></div></div><div class="span9" id="dox-content"><div class="page-header"><h1><small>info-file</small> מדריך לבוט התחלתי</h1></div><div class="body"><div class="doc doc-main"><div class="info-file-content" dir="auto">                &lt;h1&gt;מדריך לכתיבת בוט ב- &lt;span dir="ltr"&gt;Java&lt;/span&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;המשחק רץ על Google Chrome בלבד.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;נתאר תחילה את הצעדים הראשונים בכתיבת בוט, ובהמשך המסמך נסביר כיצד נריץ אותו.&lt;/p&gt;
+&lt;p&gt;כדי לייצר את הבוט הראשון שלכם (שאינו עושה דבר!) עקבו אחר הצעדים הבאים:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;היכנסו לאתר האינטרנט של המשחק ועברו לעמוד הבית של הקבוצה שלכם.&lt;/li&gt;
+&lt;li&gt;בתפריט הימני לחצו על אייקון הג'ויסטיק כדי להגיע לעמוד ה- WebKit, שנראה כך:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt="Webkit" src="../img/2018Tutorial/webkit.png"&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;לחצו על תפריט השפות הנפתח (Language) ובחרו &lt;span dir="ltr"&gt;Java&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;העתיקו לתוך אזור עריכת הקוד את התוכן הבא:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;package&lt;/span&gt; &lt;span class="nn"&gt;bots&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pirates.*&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;MyBot&lt;/span&gt; &lt;span class="kd"&gt;implements&lt;/span&gt; &lt;span class="n"&gt;PirateBot&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;doTurn&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;PirateGame&lt;/span&gt; &lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;doTurn היא פונקציית המשחק שלנו. היא מקבלת את מצב המשחק כפרמטר game.&lt;/p&gt;
+&lt;p&gt;doTurn שלנו ריק כרגע, ולכן, הבוט שלנו, לא יעשה דבר.&lt;/p&gt;
+&lt;p&gt;הקוד שתכתבו בפונקציה זו יקרא בכל תור במשחק.&lt;/p&gt;
+&lt;h2&gt;הרצה של הבוט&lt;/h2&gt;
+&lt;p&gt;באזור ההרצה תוכלו להריץ את הקוד שלכם מול כל אחד מהבוטים לדוגמא. לחצו על כפתור ה-RUN של הבוט היריב שבחרתם.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Map" src="../img/2018Tutorial/map.png"&gt;&lt;/p&gt;
+&lt;p&gt;מאחר ש- doTurn היא פונקציה שלא עושה דבר, ספינות הפיראטים שלנו לא זזות, ואנחנו מפסידים ☹.&lt;/p&gt;
+&lt;p&gt;כדי לשפר את מצבנו, כדאי שנתחיל לכתוב קצת קוד!&lt;/p&gt;
+&lt;p&gt;לפני שנמשיך, מכיוון שיש לנו בוט שאמנם לא עושה דבר, אך אינו "מתרסק", מומלץ להעלות אותו לאתר.&lt;/p&gt;
+&lt;p&gt;איך להעלות קוד לאתר?&lt;/p&gt;
+&lt;p&gt;באזור ההרצה, כפתור ה-SUBMIT ישמור את הקוד הנוכחי שלכם כולל השפה בה הוא נכתב.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;באופן כללי, מומלץ לשמור על כל התקדמות שתהיה.&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;בוט 1: כיצד מניעים ספינת פיראטים?&lt;/h2&gt;
+&lt;p&gt;נראה בוט המניע את ספינת הפיראטים הראשונה שלנו, מהמיקום ההתחלתי שלה לכיוון (0,0).&lt;/p&gt;
+&lt;p&gt;לאחר שנגיע למיקום (0,0) הפיראט יפסיק לזוז, מאחר שכבר הגענו למקום (0,0) והחל מתור מסויים ננסה לנוע לאותו מקום. &lt;/p&gt;
+&lt;p&gt;נעזר בבוט זה להבנת הפונקציות בלבד. קראו את ההסברים.&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;package&lt;/span&gt; &lt;span class="nn"&gt;bots&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pirates.*&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;MyBot&lt;/span&gt; &lt;span class="kd"&gt;implements&lt;/span&gt; &lt;span class="n"&gt;PirateBot&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;doTurn&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;PirateGame&lt;/span&gt; &lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+        &lt;span class="c1"&gt;// Choose your first pirate ship.&lt;/span&gt;
+        &lt;span class="n"&gt;Pirate&lt;/span&gt; &lt;span class="n"&gt;pirate&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getMyLivingPirates&lt;/span&gt;&lt;span class="o"&gt;()[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;];&lt;/span&gt;
+        &lt;span class="c1"&gt;// Create destination - a location - for a pirate ship.&lt;/span&gt;
+        &lt;span class="n"&gt;Location&lt;/span&gt; &lt;span class="n"&gt;destination&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;Location&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+        &lt;span class="c1"&gt;// Sail towards the destination.&lt;/span&gt;
+        &lt;span class="n"&gt;pirate&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;sail&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;destination&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;נסביר בהרחבה:&lt;/p&gt;
+&lt;p&gt;הפונקציה הבאה מחזירה לנו רשימה של כל ספינות הפיראטים שלנו שבחיים:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getMyLivingPirates&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;לשם פשטות, ומכיוון שלא בחרנו עדיין אסטרטגיה אחרת, נבחר את ספינת הפיראטים הראשונה ברשימה:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Pirate&lt;/span&gt; &lt;span class="n"&gt;pirate&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getMyLivingPirates&lt;/span&gt;&lt;span class="o"&gt;()[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;];&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;נקבע את היעד להיות (0,0):&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Location&lt;/span&gt; &lt;span class="n"&gt;destination&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;Location&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;כעת נפליג לכיוון היעד שנבחר. לשם כך נשתמש בפונקציות sail.&lt;/p&gt;
+&lt;p&gt;הפונקציה sail היא פונקציה של פיראט, המקבלת כפרמטר את היעד של הפיראט ומניעה את הפיראט לכיוון היעד, תוך התחשבות במגבלה על המרחק שמותר לפיראט לנוע.&lt;/p&gt;
+&lt;p&gt;שימו לב! הפונקציה sail &lt;strong&gt;&lt;em&gt;מתבצעת רק בסוף התור&lt;/em&gt;&lt;/strong&gt;, ללא קשר למיקומה בקוד שכתבנו.&lt;/p&gt;
+&lt;p&gt;התנועה מוסברת יותר לעומק בנספח בסוף המסמך.&lt;/p&gt;
+&lt;h2&gt;בוט 2: איסוף קפסולה&lt;/h2&gt;
+&lt;p&gt;הבוט השני שלנו, אוסף קפסולה. נוסיף גם הודעות שיראו בחלון ה- Log.&lt;/p&gt;
+&lt;p&gt;העתיקו את הקוד הבא ל- Webkit:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;package&lt;/span&gt; &lt;span class="nn"&gt;bots&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pirates.*&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;MyBot&lt;/span&gt; &lt;span class="kd"&gt;implements&lt;/span&gt; &lt;span class="n"&gt;PirateBot&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;doTurn&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;PirateGame&lt;/span&gt; &lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+        &lt;span class="c1"&gt;// Get one of my pirates.&lt;/span&gt;
+        &lt;span class="n"&gt;Pirate&lt;/span&gt; &lt;span class="n"&gt;pirate&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getMyLivingPirates&lt;/span&gt;&lt;span class="o"&gt;()[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;];&lt;/span&gt;
+        &lt;span class="c1"&gt;// If the pirate doesn&amp;#39;t have a capsule, go and get it.&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pirate&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;capsule&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="kc"&gt;null&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+            &lt;span class="n"&gt;Capsule&lt;/span&gt; &lt;span class="n"&gt;capsule&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getMyCapsule&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+            &lt;span class="c1"&gt;// Set sail.&lt;/span&gt;
+            &lt;span class="n"&gt;pirate&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;sail&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;capsule&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+            &lt;span class="c1"&gt;// Print a message.&lt;/span&gt;
+            &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;pirate &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;pirate&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot; sails to &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;capsule&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+        &lt;span class="o"&gt;}&lt;/span&gt;
+        &lt;span class="c1"&gt;// Else go with the capsule to the mothership.&lt;/span&gt;
+        &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+            &lt;span class="n"&gt;Mothership&lt;/span&gt; &lt;span class="n"&gt;mothership&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getMyMothership&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+            &lt;span class="c1"&gt;// Sail towards my mothership.&lt;/span&gt;
+            &lt;span class="n"&gt;pirate&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;sail&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mothership&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+            &lt;span class="c1"&gt;// Print a message.&lt;/span&gt;
+            &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;pirate &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;pirate&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot; sails to &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;mothership&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+        &lt;span class="o"&gt;}&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;נסביר את הבוט שלב אחר שלב.&lt;/p&gt;
+&lt;p&gt;כמו בבוט הקודם, נבחר את הפיראט הראשון שלנו:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Pirate&lt;/span&gt; &lt;span class="n"&gt;pirate&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getMyLivingPirates&lt;/span&gt;&lt;span class="o"&gt;()[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;];&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;הפעולה:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getMyLivingPirates&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;מחזירה את כל  הפיראטים החיים (שעל המפה) שלנו.&lt;/p&gt;
+&lt;p&gt;ראשית, נבדוק האם הפיראט מחזיק קפסולה, בעזרת השורה הבאה:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pirate&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;capsule&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="kc"&gt;null&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;התכונה capsule של פיראט אומרת לנו איזה קפסולה הפיראט מחזיק כעת. אם הקפסולה שהוא מחזיק הוא null, נדע שהוא לא מחזיק קפסולה. מומלץ להשתמש בפונקציית hasCapsule של הפיראט כדי לגלות האם יש לו קפסולה או לא. אם הוא לא מחזיק קפסולה, נבצע את קטע הקוד הבא:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Capsule&lt;/span&gt; &lt;span class="n"&gt;capsule&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getMyCapsule&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+&lt;span class="c1"&gt;// Set sail&lt;/span&gt;
+&lt;span class="n"&gt;pirate&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;sail&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;capsule&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+&lt;span class="c1"&gt;// Print a message&lt;/span&gt;
+&lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;pirate &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;pirate&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot; sails to &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;capsule&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;ראשית, אנו מגדירים את היעד של הפיראט כקפסולה של השחקן שלו. הפונקציה:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;getMyCapsule&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;מחזירה את ה- capsule של השחקן.&lt;/p&gt;
+&lt;p&gt;לאחר מכן, נשתמש ב- sail על מנת להניע את הפיראט לכיוון ספינת האם.&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;pirate &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;pirate&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot; sails to &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;capsule&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;את ההודעה נוכל לראות על מסך ה- debug ב- replay של המשחק.&lt;/p&gt;
+&lt;p&gt;אם הפיראט מחזיק קפסולה, נרצה לקחת את הקפסולה לספינת האם שלנו. במקרה זה, נבצע את קטע הקוד הבא:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Mothership&lt;/span&gt; &lt;span class="n"&gt;mothership&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getMyMothership&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+&lt;span class="c1"&gt;// Sail towards my mothership&lt;/span&gt;
+&lt;span class="n"&gt;pirate&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;sail&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mothership&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+&lt;span class="c1"&gt;// Print a message&lt;/span&gt;
+&lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;pirate &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;pirate&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot; sails to &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;mothership&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;קטע זה דומה מאוד לקטע שבוצע כאשר אין לנו קפסולה. נשים לב להבדל העיקרי, שהוא השימוש בפונקציה:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getMyMothership&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;על מנת למצוא את ספינת האם של השחקן.&lt;/p&gt;
+&lt;div class="webkit-submit"&gt;
+זכרו ללחוץ Submit כדי להגיש את הבוט, אחרת עבודתכם תרד לטמיון!
+&lt;/div&gt;
+
+&lt;h2&gt;בוט 3 : דחיפה&lt;/h2&gt;
+&lt;p&gt;מלבד תנועה, ספינות פיראטים יכולות גם לדחוף. בחלק זה נלמד את הפיראטים שלנו כיצד לדחוף.&lt;/p&gt;
+&lt;p&gt;נכתוב פונקצית עזר, ונקרא לה tryPush. הפונקציה מקבלת פיראט שלנו, ואת המשחק.&lt;/p&gt;
+&lt;p&gt;היא מחפשת מטרה לדחוף ומחזירה האם היא הצליחה או לא:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cm"&gt;/**&lt;/span&gt;
+&lt;span class="cm"&gt; * Makes the pirate try to push an enemy pirate. Returns True if it did.&lt;/span&gt;
+&lt;span class="cm"&gt; *&lt;/span&gt;
+&lt;span class="cm"&gt; * @param pirate - The pushing pirate.&lt;/span&gt;
+&lt;span class="cm"&gt; * @param game - The current game state.&lt;/span&gt;
+&lt;span class="cm"&gt; * @return - true if the pirate pushed.&lt;/span&gt;
+&lt;span class="cm"&gt; */&lt;/span&gt;
+&lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kt"&gt;boolean&lt;/span&gt; &lt;span class="nf"&gt;tryPush&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Pirate&lt;/span&gt; &lt;span class="n"&gt;pirate&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;PirateGame&lt;/span&gt; &lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="c1"&gt;// Go over all enemies.&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Pirate&lt;/span&gt; &lt;span class="n"&gt;enemy&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getEnemyLivingPirates&lt;/span&gt;&lt;span class="o"&gt;())&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+        &lt;span class="c1"&gt;// Check if the pirate can push the enemy.&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pirate&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;canPush&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;enemy&lt;/span&gt;&lt;span class="o"&gt;))&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+            &lt;span class="c1"&gt;// Push enemy!&lt;/span&gt;
+            &lt;span class="n"&gt;pirate&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;push&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;enemy&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;enemy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;initialLocation&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+
+            &lt;span class="c1"&gt;// Print a message.&lt;/span&gt;
+            &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;pirate &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;pirate&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot; pushes &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;enemy&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot; towards &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;enemy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;initialLocation&lt;/span&gt;&lt;span class="o"&gt;;)&lt;/span&gt;
+
+            &lt;span class="c1"&gt;// Did push.&lt;/span&gt;
+            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+        &lt;span class="o"&gt;}&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+
+    &lt;span class="c1"&gt;// Didn&amp;#39;t push.&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="kc"&gt;false&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;נעבור על הפונקציה שלב אחר שלב:&lt;/p&gt;
+&lt;p&gt;נעבור על כל ספינות הפיראטים  של האויב בעזרת הפונקציה:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getEnemyLivingPirates&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;הפונקציה הזו מחזירה רשימה של כל ספינות הפיראטים החיים של האויב.&lt;/p&gt;
+&lt;p&gt;לפיראט שלנו ישנו טווח מוגבל להתקפה וכן מותר לו לדחוף פיראט אחר רק אם עברו לפחות 15 תורות מאז שדחף פיראט בפעם האחרונה. לכן, נרצה לבדוק האם מותר לנו לתקוף כל פיראט אויב ע"י השורה:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pirate&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;canPush&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;enemy&lt;/span&gt;&lt;span class="o"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;הפונקציה:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;canPush&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;enemy&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;בודקת האם האויב בטווח תקיפה שלנו, וגם האם מותר לנו לתקוף בתור הזה.&lt;/p&gt;
+&lt;p&gt;אם נגלה שכן, אז נתקוף אותו, נרשום ל- log את הפעולה, ונחזיר שהפעולה הצליחה:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;// Push enemy!&lt;/span&gt;
+&lt;span class="n"&gt;pirate&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;push&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;enemy&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;enemy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;initialLocation&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+
+&lt;span class="c1"&gt;// Print a message&lt;/span&gt;
+&lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;pirate &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;pirate&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot; pushes &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;enemy&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot; towards &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;enemy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;initialLocation&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+
+&lt;span class="c1"&gt;// Did push&lt;/span&gt;
+&lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;נבצע את ההתקפה בעזרת הפעולה:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;pirate&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;push&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;enemy&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;enemy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;initialLocation&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;הפעולה הזו מקבלת את הפיראט שאנו רוצים לדחוף ואת הכיוון אליו אנחנו רוצים לדחוף אותו.
+הפעולה גורמת לפיראט הנדחף לזוז מרחק מסוים לכיוון שציינו. ההתקפה &lt;strong&gt; תמיד פוגעת אם המטרה התחילה את התור בטווח. &lt;/strong&gt; אם דוחפים פיראט מעבר לקצה המפה, הוא מתרסק, וחוזר לחיים לאחר 40 תורות.&lt;/p&gt;
+&lt;p&gt;לאחר שהורנו על ההתקפה, נחזיר true, מפני שאכן מצאנו מטרה לתקוף בתור זה.&lt;/p&gt;
+&lt;p&gt;לבסוף, אם לא מצאנו מטרה מתאימה, נחזיר false מפני שלא הצלחנו לתקוף שום מטרה:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="kc"&gt;false&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;עכשיו שכתבנו את פעולת ה- tryPush, נמקם אותה בקוד.&lt;/p&gt;
+&lt;p&gt;נרצה להוסיף את הקריאה לפעולה זו בקוד שכתבנו בחלק הקודם של ההסבר.&lt;/p&gt;
+&lt;p&gt;מפני ש&lt;strong&gt;פיראט יכול רק לתקוף &lt;span style="text-decoration:underline;"&gt;או&lt;/span&gt; לזוז&lt;/strong&gt;, אנחנו רוצים להימנע ממצב בו אנו גם מזיזים פיראט וגם תוקפים איתו באותו התור, אחרת &lt;strong&gt;כל&lt;/strong&gt; הפעולות שנבקש שייבצע יבוטלו.&lt;/p&gt;
+&lt;p&gt;ולכן, נוסיף את התנאי הבא לפני שנזיז את הפיראטים שלנו:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;(!&lt;/span&gt;&lt;span class="n"&gt;tryPush&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pirate&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;פונקציית doTurn הסופית שלנו תראה כך:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cm"&gt;/**&lt;/span&gt;
+&lt;span class="cm"&gt; * Makes the bot run a single turn.&lt;/span&gt;
+&lt;span class="cm"&gt; *&lt;/span&gt;
+&lt;span class="cm"&gt; * @param game - The current game state.&lt;/span&gt;
+&lt;span class="cm"&gt; */&lt;/span&gt;
+&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;doTurn&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;PirateGame&lt;/span&gt; &lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="c1"&gt;// Get one of my pirates.&lt;/span&gt;
+    &lt;span class="n"&gt;Pirate&lt;/span&gt; &lt;span class="n"&gt;pirate&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getMyLivingPirates&lt;/span&gt;&lt;span class="o"&gt;()[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;];&lt;/span&gt;
+
+    &lt;span class="c1"&gt;// Try to push, if you didn&amp;#39;t - take the capsule and go to the mothership.&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;(!&lt;/span&gt;&lt;span class="n"&gt;tryPush&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pirate&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;))&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+        &lt;span class="c1"&gt;// If the pirate has a capsule, go to my mothership.&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pirate&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;capsule&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="kc"&gt;null&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+            &lt;span class="n"&gt;Mothership&lt;/span&gt; &lt;span class="n"&gt;mothership&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getMyMothership&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+            &lt;span class="c1"&gt;// Go towards the mothership.&lt;/span&gt;
+            &lt;span class="n"&gt;pirate&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;sail&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mothership&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+        &lt;span class="o"&gt;}&lt;/span&gt;
+        &lt;span class="c1"&gt;// Else go and get the capsule.&lt;/span&gt;
+        &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+            &lt;span class="n"&gt;Capsule&lt;/span&gt; &lt;span class="n"&gt;capsule&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;game&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getMyCapsule&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+            &lt;span class="n"&gt;pirate&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;sail&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;capsule&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+        &lt;span class="o"&gt;}&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="webkit-submit"&gt;
+זכרו ללחוץ Submit כדי להגיש את הבוט, אחרת עבודתכם תרד לטמיון!
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;מכאן יש עוד הרבה מקומות לשפר את הבוט.&lt;/p&gt;
+&lt;p&gt;במהלך העבודה כדאי לזכור:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;להדפיס הודעות כדי לדעת מה הבוט שלנו עושה, ככל שהן יהיו יותר מדויקות כך נבין יותר טוב.&lt;/li&gt;
+&lt;li&gt;לעבוד בעזרת פונקציות עזר ולהוסיף מחלקות במקרה הצורך. שימוש בפונקציות עזר ומחלקות מפחית כפילויות בקוד, ומאפשר להפריד בין חלקים שונים בבוט ובכך לאפשר שינויים גדולים בהתנהגות בעזרת שינויים קטנים וברורים בקוד.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;לשמור באתר כל התקדמות - אחרת אתם עלולים לאבד את עבודתכם!&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;מומלץ לעיין ב-API המלא כדי לקבל היכרות עם הפונקציות שהמשחק מציע ועם האובייקטים השונים בו.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;רעיונות לאסטרטגיות מתקדמות&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;נסו לדחוף פיראטים אויבים מחוץ למפה, וכך הם ימותו, ויחזרו לחיים לאחר 40 תורות.
+כדי למצוא את כיוון הדחיפה הרצוי, מצאו את הקיר הכי קרוב מלמעלה/למטה ומהצדדים על ידי השוואת ערך ה- row או ה- col של הפיראט לערך שלו בקצוות המפה. מצאו משניהם מי יותר קרוב ודחפו לכיוון הזה בקו ישר.&lt;/li&gt;
+&lt;li&gt;עמידה ישירות על ספינת האם של היריב לא תעזור בהגנה מכיוון שהוא יכניס את הקפסולה לפני שתספיקו לדחוף אותו. נסו לעמוד בקו אחד עם הפיראט האויב בעל הקפסולה וספינת האם, במרחק מספיק גדול ממנה (יותר גדול מטווח הפריקה). השתמשו בפונקציה towards (הסבר נוסף עליה בקובץ "הסבר לAPI של Location, MapObject") כדי למצוא איפה כדאי לעמוד.&lt;/li&gt;
+&lt;li&gt;ניתן לדחוף פיראטים מהקבוצה שלך וכך להזיז אותם מרחק גדול יותר בתור אחד. אך היזהרו לא לדחוף פיראט שמחזיק קפסולה עם 2 פיראטים או יותר, כדי שלא יאבד את הקפסולה.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2&gt;נספח: כיצד מתבצעת תנועה&lt;/h2&gt;
+&lt;p&gt;על מנת לנוע במשחק נשתמש בפונקציית sail.&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;pirate&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;sail&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;destination&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;sail מקבלת יעד (destination) ומניעה את ספינת הפיראטים מרחק של 200 לכיוון היעד הנתון, או עד היעד (אם הוא קרוב יותר). דוגמה:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="towards" src="../img/towards.png"&gt;&lt;/p&gt;
+&lt;p&gt;נניח כי הפיראט נמצא בנקודה מסוימת, והוא רוצה לנוע לעבר הקפסולה. מגבלת התנועה היא 200. לכן, ינוע הפיראט בתור הזה לאורך הקו האדום הארוך רק עד הקו האדום הקטן.&lt;/p&gt;
+&lt;p&gt;זכרו! פונקציית התנועה sail &lt;strong&gt;מתבצעת רק בסוף התור&lt;/strong&gt;, ללא קשר למיקום הקריאה אליה בקוד שכתבנו.&lt;/p&gt;
+&lt;p&gt;שימו ♥ ניתן פשוט לזוז אל מחוץ למפה ולמות אם הפיראט מספיק קרוב לקצה והולך החוצה.&lt;/p&gt;</div></div></div><footer class="section site-footer"><div class="container"><div class="copyright"><p style="color:#000000">The official documentation of the Piratez competition, Version: 2018</p><p style="color:#000000">&copy; 2018 &nbsp;</p></div></div></footer></div></div></div><script src="..//highlighter.js"></script><link href="../highlighter.css" rel="stylesheet"/></body></html>
