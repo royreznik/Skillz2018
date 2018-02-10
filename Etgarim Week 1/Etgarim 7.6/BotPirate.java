@@ -109,7 +109,7 @@ public class BotPirate {
         }
     }
 
-    public void tryPushAstroid(Asteroid a, MapObject obj) {
+    public void tryPushAsteroid(Asteroid a, MapObject obj) {
         if (pirate.canPush(a)) {
             // Push the enemy!
             game.debug("pushAsteroidTo " + obj.getLocation());
@@ -134,10 +134,10 @@ public class BotPirate {
         }
         if (game.getLivingAsteroids().length > 0) {
 //			if (Engine.areThereCampers()) {
-//				tryPushAstroid(game.getLivingAsteroids()[0], game.getMyMotherships()[0]);
+//				tryPushAsteroid(game.getLivingAsteroids()[0], game.getMyMotherships()[0]);
 //			}
-//			tryPushAstroid(game.getLivingAsteroids()[0], game.getEnemyCapsules()[0]);
-            tryPushAstroid(Engine.getClosestAsteroid(this.pirate), Engine.pushAsteroidTo(Engine.getClosestAsteroid(this.pirate)));
+//			tryPushAsteroid(game.getLivingAsteroids()[0], game.getEnemyCapsules()[0]);
+            tryPushAsteroid(Engine.getClosestAsteroid(this.pirate), Engine.pushAsteroidTo(Engine.getClosestAsteroid(this.pirate)));
             if (didPush) {
                 return;
             }
@@ -167,31 +167,22 @@ public class BotPirate {
      * (0,4600) - a straight line towards the nearest wall.
      */
     public Location nearestWall() {
-        int maxRows = game.rows;
-        int maxCols = game.cols;
-
         int row = this.pirate.location.row;
         int col = this.pirate.location.col;
 
-        if (row < (maxRows / 2.0)) {
-            if (col < (maxCols / 2.0)) {
-                if (col < row)
-                    return new Location(row, -1);
-                return new Location(-1, col);
-            }
-            if (row < (maxCols - col))
-                return new Location(-1, col);
-            return new Location(row, maxCols + 1);
-        }
-        if (col < (maxCols / 2.0)) {
-            if (col < (maxRows - row))
-                return new Location(row, -1);
-            return new Location(maxRows + 1, col);
-        }
+        List<Location> locations = new ArrayList<>();
 
-        if ((maxCols - col) < (maxRows - row))
-            return new Location(row, maxCols + 1);
-        return new Location(maxRows + 1, col);
+        locations.add(new Location(row, game.cols + 1));
+        locations.add(new Location(row, -1));
+        locations.add(new Location(-1, col));
+        locations.add(new Location(game.rows + 1, col));
+
+        locations.sort((l1, l2) -> l1.distance(pirate) - l2.distance(pirate));
+        try {
+            return locations.get(0);
+        } catch (Exception e) {
+            return locations.get(1);
+        }
     }
 
     /**
@@ -309,8 +300,8 @@ public class BotPirate {
         }
         for (Asteroid astro : game.getAllAsteroids()) {
             if (!moveAsteroid) {
-                //tryPushAstroid(astro, game.getMyMotherships()[0]);
-                tryPushAstroid(astro, Engine.pushAsteroidTo(astro));
+                //tryPushAsteroid(astro, game.getMyMotherships()[0]);
+                tryPushAsteroid(astro, Engine.pushAsteroidTo(astro));
             }
 
 
@@ -399,7 +390,7 @@ public class BotPirate {
         Pirate camper = game.getAllEnemyPirates()[0];
 
         for (Asteroid astro : game.getAllAsteroids()) {
-            tryPushAstroid(astro, Engine.pushAsteroidTo(astro));
+            tryPushAsteroid(astro, Engine.pushAsteroidTo(astro));
         }
 
         for (Pirate enemy : game.getAllEnemyPirates()) {
@@ -558,14 +549,14 @@ public class BotPirate {
         if (destination != null) {
             try {
                 //THESE ARE THE OPTIONS FROM WHAT I SENT: (THIS IS A BUG)
-                // this.tryPushAstroid(asteroid, targets.get(0));
-                this.tryPushAstroid(asteroid, Engine.midPoint(targets));
-                // this.tryPushAstroid(asteroid, Engine.pushAsteroidTo(asteroid));
+                // this.tryPushAsteroid(asteroid, targets.get(0));
+                this.tryPushAsteroid(asteroid, Engine.midPoint(targets));
+                // this.tryPushAsteroid(asteroid, Engine.pushAsteroidTo(asteroid));
             } catch (Exception e) {
                 for (Mothership x : game.getMyMotherships()) {
                     try {
                         if (Engine.areThereCampers(x))
-                            this.tryPushAstroid(asteroid, Engine.getClosestEnemy(x));
+                            this.tryPushAsteroid(asteroid, Engine.getClosestEnemy(x));
                     } catch (Exception e2) {
                     }
                 }
@@ -586,7 +577,7 @@ public class BotPirate {
         for (Asteroid a : Asteroids) {
             game.debug(a.direction);
             if (pirate.canPush(a) && Engine.isAsteroidMoving(a)) {
-                this.tryPushAstroid(a, a);
+                this.tryPushAsteroid(a, a);
             }
         }
         if (!didPush && !pirate.hasCapsule()) {

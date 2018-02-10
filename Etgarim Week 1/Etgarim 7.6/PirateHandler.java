@@ -231,12 +231,6 @@ public class PirateHandler {
                 game.debug("YOU_SHALL_NOT_PASS");
                 pirates.get(0).work();
                 break;
-                
-            case ONEVONE:
-                pirates.get(0).setJob(Job.CAPSULER);
-                 game.debug("One vs One!");
-                 break;
-                
             // 8-0
             default:
                 for (BotPirate p : pirates) {

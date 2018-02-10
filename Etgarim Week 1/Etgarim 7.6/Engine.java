@@ -599,34 +599,54 @@ public class Engine {
      * the method runs on a Pirate at (100,4600) the method will return
      * (0,4600) - a straight line towards the nearest wall.
      */
-    public static Location nearestWall(MapObject obj) {
+//    public static Location nearestWall(MapObject obj) {
+//
+//        int maxRows = game.rows;
+//        int maxCols = game.cols;
+//
+//        int row = obj.getLocation().row;
+//        int col = obj.getLocation().col;
+//
+//        if (row < (maxRows / 2.0)) {
+//            if (col < (maxCols / 2.0)) {
+//                if (col < row)
+//                    return new Location(row, -1);
+//                return new Location(-1, col);
+//            }
+//            if (row < (maxCols - col))
+//                return new Location(-1, col);
+//            return new Location(row, maxCols + 1);
+//        }
+//
+//        if (col < (maxCols / 2.0)) {
+//            if (col < (maxRows - row))
+//                return new Location(row, -1);
+//            return new Location(maxRows + 1, col);
+//        }
+//
+//        if ((maxCols - col) < (maxRows - row))
+//            return new Location(row, maxCols + 1);
+//        return new Location(maxRows + 1, col);
+//    }
 
-        int maxRows = game.rows;
-        int maxCols = game.cols;
+    public static Location nearestWall(MapObject obj) {
 
         int row = obj.getLocation().row;
         int col = obj.getLocation().col;
 
-        if (row < (maxRows / 2.0)) {
-            if (col < (maxCols / 2.0)) {
-                if (col < row)
-                    return new Location(row, -1);
-                return new Location(-1, col);
-            }
-            if (row < (maxCols - col))
-                return new Location(-1, col);
-            return new Location(row, maxCols + 1);
-        }
+        List<Location> locations = new ArrayList<>();
 
-        if (col < (maxCols / 2.0)) {
-            if (col < (maxRows - row))
-                return new Location(row, -1);
-            return new Location(maxRows + 1, col);
-        }
+        locations.add(new Location(row, game.cols + 1));
+        locations.add(new Location(row, -1));
+        locations.add(new Location(-1, col));
+        locations.add(new Location(game.rows + 1, col));
 
-        if ((maxCols - col) < (maxRows - row))
-            return new Location(row, maxCols + 1);
-        return new Location(maxRows + 1, col);
+        locations.sort((l1, l2) -> l1.distance(obj.getLocation()) - l2.distance(obj.getLocation()));
+        try {
+            return locations.get(0);
+        } catch (Exception e) {
+            return locations.get(1);
+        }
     }
 
     /**
