@@ -126,8 +126,4 @@ public class PirateNavigator {
         return p;
     }
 
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 33e9a227669746eb870bcbcaa0439b03c31563d2

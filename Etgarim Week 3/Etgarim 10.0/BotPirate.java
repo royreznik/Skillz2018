@@ -3,7 +3,6 @@ package bots;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-<<<<<<< HEAD
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
@@ -11,10 +10,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
-=======
-import java.util.List;
-import java.util.HashSet;
->>>>>>> 33e9a227669746eb870bcbcaa0439b03c31563d2
 
 import pirates.*;
 
@@ -24,10 +19,7 @@ public class BotPirate {
     private static final PirateGame game;
     public static HashSet<Wormhole> assignedHoles;
     public static HashSet<Capsule> unAvailableCapsules;
-<<<<<<< HEAD
     private static Map<Capsule, Integer> capsuleDrops;
-=======
->>>>>>> 33e9a227669746eb870bcbcaa0439b03c31563d2
 
     private static int capsulerCounter = -1;
     private static int camperCounter = -1;
@@ -118,11 +110,7 @@ public class BotPirate {
      *            This methods will try to push p in the obj location
      */
     public void tryPushPirate(Pirate p, MapObject obj) {
-<<<<<<< HEAD
         if (!this.didPush && this.pirate.canPush(p)) {
-=======
-        if (this.pirate.canPush(p)) {
->>>>>>> 33e9a227669746eb870bcbcaa0439b03c31563d2
             // Push the enemy!
             this.pirate.push(p, obj.getLocation());
             // Did push.
@@ -131,11 +119,7 @@ public class BotPirate {
     }
 
     public void tryPushAsteroid(Asteroid a, MapObject obj) {
-<<<<<<< HEAD
         if (!this.didPush && pirate.canPush(a) && a.turnsToRevive == 0 && game.pushDistance > 0) {
-=======
-        if (pirate.canPush(a) && a.turnsToRevive == 0) {
->>>>>>> 33e9a227669746eb870bcbcaa0439b03c31563d2
             // Push the enemy!
             //game.debug("pushAsteroidTo " + obj.getLocation());
             pirate.push(a, obj.getLocation());
@@ -148,11 +132,7 @@ public class BotPirate {
     }
 
     public void tryPushWormhole(Wormhole w, MapObject obj) {
-<<<<<<< HEAD
         if (!this.didPush && pirate.canPush(w)) {
-=======
-        if (pirate.canPush(w)) {
->>>>>>> 33e9a227669746eb870bcbcaa0439b03c31563d2
             // Push the Wormhole!
             //game.debug("Pushing Wormhole to " + obj.getLocation());
             pirate.push(w, obj.getLocation());
@@ -258,7 +238,6 @@ public class BotPirate {
         }
         return closest;
     }
-<<<<<<< HEAD
     
     /**
      * returns the best target for this camper to push
@@ -275,8 +254,6 @@ public class BotPirate {
         }
         return null;
     }
-=======
->>>>>>> 33e9a227669746eb870bcbcaa0439b03c31563d2
 
     /**
      * @return closest myLivingPirate to me
@@ -292,17 +269,12 @@ public class BotPirate {
     }
 
     public void camperLogicV2() {
-<<<<<<< HEAD
         if(camperCounter == -1){
             BotPirate.capsuleDrops = Engine.getPossibleEnemyDrops(); //refresh drops every turn
         }
         camperCounter++;
         
         Pirate enemyCapsuler;
-=======
-        camperCounter++;
-        Pirate enemyCapsuler = Engine.getClosestEnemyCapsuler(this.pirate);
->>>>>>> 33e9a227669746eb870bcbcaa0439b03c31563d2
         int numOfEnemyShips = game.getEnemyMotherships().length;
         Mothership enemyMothership = game.getEnemyMotherships()[0];
         //Wormhole w = Engine.getClosestEnemyWormhole(this.pirate);
@@ -312,12 +284,8 @@ public class BotPirate {
         if (game.getAllWormholes().length > 0 && enemyMom != null && w != null && ((enemyMom.distance(w)) - game.mothershipUnloadRange) <= 600)
             destination = w.getLocation().towards(this.pirate, game.wormholeRange + 50);
         if (numOfEnemyShips < 2 && numOfEnemyShips > 0) {
-<<<<<<< HEAD
             enemyCapsuler = Engine.getClosestEnemyCapsuler(enemyMothership);
             if(enemyCapsuler != null && enemyCapsuler.stateName.equals("heavy"))
-=======
-            if(enemyCapsuler.stateName.equals("heavy"))
->>>>>>> 33e9a227669746eb870bcbcaa0439b03c31563d2
             {
                 firstLayer = 1;
             }
@@ -340,30 +308,12 @@ public class BotPirate {
                     destination = enemyCapsuler;
                 }
             }
-<<<<<<< HEAD
             
-=======
-            Pirate target = Engine.getClosestEnemyCapsuler(this.pirate);
-            Asteroid asteroid = Engine.getClosestLivingAsteroid(target);
-            try {
-                if (target.distance(asteroid) - asteroid.size <= 600)
-                    tryPushPirate(target, asteroid);
-                else
-                    tryPushPirate(target, Engine.nearestWall(target));
-            } catch (NullPointerException e) {
-                tryPushPirate(target, Engine.nearestWall(target));
-            }
-
->>>>>>> 33e9a227669746eb870bcbcaa0439b03c31563d2
         } else {
             List<Mothership> enemyMotherShips = Arrays.asList(game.getEnemyMotherships());
             List<Capsule> enemyCapsules = Arrays.asList(game.getEnemyCapsules());
             List<Mothership> best = Engine.getBestEnemyBase(enemyMotherShips, enemyCapsules);
-<<<<<<< HEAD
             enemyCapsuler = Engine.getClosestEnemyCapsuler(best.get(0));
-=======
-
->>>>>>> 33e9a227669746eb870bcbcaa0439b03c31563d2
             if (camperCounter < 2) {
                 if (enemyCapsuler == null) {
                     destination = best.get(0);
@@ -377,30 +327,22 @@ public class BotPirate {
                     destination = best.get(0).getLocation().towards(enemyCapsuler, 1200);
                 }
 
-<<<<<<< HEAD
             } else if(best.size()>1) {
                 enemyCapsuler = Engine.getClosestEnemyCapsuler(best.get(1));
-=======
-            } else {
->>>>>>> 33e9a227669746eb870bcbcaa0439b03c31563d2
                 if (enemyCapsuler == null) {
                     destination = best.get(1).getLocation().towards(game.getEnemyCapsules()[0], 1000);
                 } else {
                     destination = best.get(1).getLocation().towards(enemyCapsuler, 1200);
                 }
             }
-<<<<<<< HEAD
             else{
                 destination = best.get(0).getLocation().towards(enemyCapsuler, 1400);
             }
-=======
->>>>>>> 33e9a227669746eb870bcbcaa0439b03c31563d2
             if (enemyCapsuler != null) {
                 if (enemyCapsuler.distance(this.pirate) < 601) {
                     destination = enemyCapsuler;
                 }
             }
-<<<<<<< HEAD
             
 
         }
@@ -418,19 +360,6 @@ public class BotPirate {
             if(target != null){
                 tryPushPirate(target, Engine.nearestWall(target));
             }
-=======
-            Pirate target = Engine.getClosestEnemyCapsuler(this.pirate);
-            Asteroid asteroid = Engine.getClosestLivingAsteroid(target);
-            try {
-                if (target.distance(asteroid) - asteroid.size < 600)
-                    tryPushPirate(target, asteroid);
-                else
-                    tryPushPirate(target, Engine.nearestWall(target));
-            } catch (NullPointerException eNull) {
-                tryPushPirate(target, Engine.nearestWall(target));
-            }
-
->>>>>>> 33e9a227669746eb870bcbcaa0439b03c31563d2
         }
 
 //        if (game.getAllAsteroids().length > 0) {
@@ -474,21 +403,13 @@ public class BotPirate {
         {
         for(Wormhole worm : game.getAllWormholes())
         {
-<<<<<<< HEAD
             if(worm.distance(game.getEnemyMotherships()[0]) < 1001 && pirate.distance(enemyCapsuler) > 1000 && pirate.pushReloadTurns<2)
-=======
-            if(worm.distance(game.getEnemyMotherships()[0]) < 800 && pirate.distance(enemyCapsuler) > 1000 && pirate.pushReloadTurns<2)
->>>>>>> 33e9a227669746eb870bcbcaa0439b03c31563d2
             {
                 destination = worm.getLocation().add(new Location(worm.wormholeRange,worm.wormholeRange));
             }
             if(game.getEnemyMotherships().length > 1)
             {
-<<<<<<< HEAD
                 if(worm.distance(game.getEnemyMotherships()[1]) < 1001 && pirate.distance(enemyCapsuler) > 1000 && pirate.pushReloadTurns<2)
-=======
-                if(worm.distance(game.getEnemyMotherships()[1]) < 800 && pirate.distance(enemyCapsuler) > 1000 && pirate.pushReloadTurns<2)
->>>>>>> 33e9a227669746eb870bcbcaa0439b03c31563d2
                 {
                     destination = worm.getLocation().add(new Location(worm.wormholeRange,worm.wormholeRange));
                 }
@@ -595,12 +516,7 @@ public class BotPirate {
 //                    tryPushAsteroid(asteroid, Engine.pushAsteroidTo(asteroid));
 //        }
 
-<<<<<<< HEAD
         
-=======
-        //OutOfSpace Logic
-    
->>>>>>> 33e9a227669746eb870bcbcaa0439b03c31563d2
         if(this.pirate.stateName.equals("heavy") && !this.pirate.hasCapsule() && game.turn > 10)
         {
             List<Pirate> normals = Engine.getNormalPirates();
@@ -619,7 +535,6 @@ public class BotPirate {
             }
         }
         
-<<<<<<< HEAD
         /*for(Pirate capPirate : game.getMyLivingPirates())
         {
             if(capPirate.hasCapsule())
@@ -643,8 +558,6 @@ public class BotPirate {
         }*/
         
         
-=======
->>>>>>> 33e9a227669746eb870bcbcaa0439b03c31563d2
         if(this.pirate.stateName.equals("normal") && this.pirate.hasCapsule())
         {
             if(game.getMyMotherships().length > 0)
@@ -685,11 +598,7 @@ public class BotPirate {
             }
             
         }
-<<<<<<< HEAD
         //OutOfSpace Logic
-=======
-        
->>>>>>> 33e9a227669746eb870bcbcaa0439b03c31563d2
         if(game.getEnemy().botName.equals("25236"))
         {
             if(!pirate.hasCapsule())
@@ -903,10 +812,7 @@ public class BotPirate {
         }
     }
 
-<<<<<<< HEAD
     //Specific jobs//
-=======
->>>>>>> 33e9a227669746eb870bcbcaa0439b03c31563d2
     public void OneManArmyLogic() {
         if (Engine.getEnemyCapsuler() != null
                 && Engine.getEnemyCapsuler().distance(game.getEnemyMotherships()[0]) < 5400) {
@@ -942,7 +848,6 @@ public class BotPirate {
             this.capsulerLogic();
         }
     }
-<<<<<<< HEAD
     
     public void StateMachineLogic()
     {
@@ -950,8 +855,6 @@ public class BotPirate {
     }
     
     
-=======
->>>>>>> 33e9a227669746eb870bcbcaa0439b03c31563d2
 
     // INIT every job
     public void work() {
@@ -989,13 +892,10 @@ public class BotPirate {
             case SPAGHT:
                 SpaghtLogic();
                 sailToDest();
-<<<<<<< HEAD
                 break;
                 
             case STATEMACHINE:
                 break;
-=======
->>>>>>> 33e9a227669746eb870bcbcaa0439b03c31563d2
             default:
                 //game.debug("No Job Found");
                 break;

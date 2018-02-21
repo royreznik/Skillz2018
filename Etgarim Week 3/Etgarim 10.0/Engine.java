@@ -958,7 +958,6 @@ public class Engine {
             return capsuler.distance(myMothership) - myMothership.unloadRange <= ((Pirate) pusher).pushDistance;
         return false;
     }
-<<<<<<< HEAD
     
     /**
      * makes a map of enemy capsules that can be dropped and the number of pushed needed for drop
@@ -979,6 +978,3 @@ public class Engine {
         return capsuleDrops;
     }
 }
-=======
-}
->>>>>>> 33e9a227669746eb870bcbcaa0439b03c31563d2

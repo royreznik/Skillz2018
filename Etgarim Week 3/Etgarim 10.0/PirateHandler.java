@@ -12,10 +12,7 @@ import pirates.MapObject;
 import pirates.Mothership;
 import pirates.Pirate;
 import pirates.PirateGame;
-<<<<<<< HEAD
 import pirates.Location;
-=======
->>>>>>> 33e9a227669746eb870bcbcaa0439b03c31563d2
 
 //Class that represent the Strategy
 public class PirateHandler {
@@ -96,17 +93,10 @@ public class PirateHandler {
                 availablePirates.addAll(Arrays.asList(game.getMyLivingPirates())); //doing this to be able to change list
                 int numCapsules = game.getMyCapsules().length, numCapsulers = 0, maxCampers = 0;
                 int numAsteroids = game.getAllAsteroids().length;
-<<<<<<< HEAD
                 int numMotherships = game.getEnemyMotherships().length, numEnemyCapsules = game.getEnemyCapsules().length;
                 int numCampers = 0, numAntiCampers = 0;
                 boolean hasAstro = false;
                 if(numMotherships != 0 && numEnemyCapsules != 0){
-=======
-                int numMotherships = game.getEnemyMotherships().length;
-                int numCampers = 0, numAntiCampers = 0;
-                boolean hasAstro = false;
-                if(numMotherships != 0){
->>>>>>> 33e9a227669746eb870bcbcaa0439b03c31563d2
                     maxCampers = game.getMyLivingPirates().length - numCapsules; //acounting for capsulers
                     if(maxCampers > 4){ 
                         //maxCampers-= numCapsules; //accounting for antcampers NOTE-no anti campers used now because they are bad
@@ -246,7 +236,6 @@ public class PirateHandler {
                 game.debug("spaghettification");
                 pirates.get(0).work();
                 break;
-<<<<<<< HEAD
             case STATEMACHINE:
                 List<Pirate> pis = Arrays.asList(game.getMyLivingPirates());
                 if(!pis.get(1).hasCapsule())
@@ -341,8 +330,6 @@ public class PirateHandler {
                 }
                 break;    
             
-=======
->>>>>>> 33e9a227669746eb870bcbcaa0439b03c31563d2
             // 8-0
             default:
                 for (BotPirate p : pirates) {

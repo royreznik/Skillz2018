@@ -44,7 +44,6 @@ public class MyBot implements PirateBot {
             game.debug(game.getEnemy().botName);
 
             // Handle Different Bot types:
-<<<<<<< HEAD
             int bot = Integer.parseInt(game.getEnemy().botName);
             switch(bot){
                 case 25186: //one man army
@@ -73,27 +72,6 @@ public class MyBot implements PirateBot {
             handler.doWork();
         } catch (Exception e) {
             System.out.println(e);
-=======
-            // OneManArmy
-            if (game.getEnemy().botName.equals("25186")) {
-                //game.debug("Name: OneManArmy");
-                handler.setTactic(Tactic.OneManArmy);
-            }
-
-            // You Shell Not Pass
-            else if (game.getEnemy().botName.equals("25191")) {
-                //game.debug("Name: You shell not pass");
-                handler.setTactic(Tactic.COOL);
-            } else if(game.getEnemy().botName.equals("25241")) {
-                handler.setTactic(Tactic.SPAGHT);
-            }
-            else if(game.getEnemy().botName.equals("25236")){
-                //BotPirate 463 - OutOfSpace
-            }
-            handler.doWork();
-        } catch (Exception e) {
-            System.out.println("Bug");
->>>>>>> 33e9a227669746eb870bcbcaa0439b03c31563d2
         }
     }
 }
